@@ -1,0 +1,1026 @@
+CREATE TABLE clienttable (
+    client_id      INTEGER NOT NULL,
+    client_name    VARCHAR2(60),
+    client_phone   INTEGER
+);
+
+ALTER TABLE clienttable ADD CONSTRAINT client_pk PRIMARY KEY ( client_id );
+
+CREATE TABLE destination (
+    destination_id     INTEGER NOT NULL,
+    destination_name   VARCHAR2(60)
+);
+
+ALTER TABLE destination ADD CONSTRAINT destination_pk PRIMARY KEY ( destination_id );
+
+CREATE TABLE employee (
+    employee_id            INTEGER NOT NULL,
+    employee_name          VARCHAR2(60),
+    employee_phone         INTEGER,
+    position_position_id   INTEGER NOT NULL
+);
+
+ALTER TABLE employee ADD CONSTRAINT employee_pk PRIMARY KEY ( employee_id );
+
+CREATE TABLE positiontable (
+    position_id     INTEGER NOT NULL,
+    position_name   VARCHAR2(60)
+);
+
+ALTER TABLE positiontable ADD CONSTRAINT position_pk PRIMARY KEY ( position_id );
+
+CREATE TABLE reservation (
+    reservation_id     INTEGER NOT NULL,
+    "Date"             DATE,
+    time               DATE,
+    price              NUMBER,
+    transport_id_res   INTEGER NOT NULL,
+    employee_id_res    INTEGER NOT NULL,
+    client_id_res      INTEGER NOT NULL
+);
+
+ALTER TABLE reservation ADD CONSTRAINT reservation_pk PRIMARY KEY ( reservation_id );
+
+CREATE TABLE ticket (
+    ticket_id            INTEGER NOT NULL,
+    price                NUMBER,
+    type_id_tic          INTEGER NOT NULL,
+    reservation_id_tic   INTEGER NOT NULL
+);
+
+ALTER TABLE ticket ADD CONSTRAINT ticket_pk PRIMARY KEY ( ticket_id );
+
+CREATE TABLE transport (
+    transport_id           INTEGER NOT NULL,
+    destination_id_trans   INTEGER NOT NULL,
+    "Date"                 DATE,
+    time                   DATE,
+    total_seats            INTEGER
+);
+
+ALTER TABLE transport ADD CONSTRAINT transport_pk PRIMARY KEY ( transport_id );
+
+CREATE TABLE typetable (
+    type_id     INTEGER NOT NULL,
+    type_name   VARCHAR2(60)
+);
+
+ALTER TABLE typetable ADD CONSTRAINT type_pk PRIMARY KEY ( type_id );
+
+ALTER TABLE employee
+    ADD CONSTRAINT employee_position_fk FOREIGN KEY ( position_position_id )
+        REFERENCES positiontable ( position_id );
+
+ALTER TABLE reservation
+    ADD CONSTRAINT reservation_client_fk FOREIGN KEY ( client_id_res )
+        REFERENCES clienttable ( client_id );
+
+ALTER TABLE reservation
+    ADD CONSTRAINT reservation_employee_fk FOREIGN KEY ( employee_id_res )
+        REFERENCES employee ( employee_id );
+
+ALTER TABLE reservation
+    ADD CONSTRAINT reservation_transport_fk FOREIGN KEY ( transport_id_res )
+        REFERENCES transport ( transport_id );
+
+ALTER TABLE ticket
+    ADD CONSTRAINT ticket_reservation_fk FOREIGN KEY ( reservation_id_tic )
+        REFERENCES reservation ( reservation_id );
+
+ALTER TABLE ticket
+    ADD CONSTRAINT ticket_type_fk FOREIGN KEY ( type_id_tic )
+        REFERENCES typetable ( type_id );
+
+ALTER TABLE transport
+    ADD CONSTRAINT transport_destination_fk FOREIGN KEY ( destination_id_trans )
+        REFERENCES destination ( destination_id );
+
+INSERT INTO TYPETABLE (TYPE_ID, TYPE_NAME) VALUES (1, 'One Way'); 
+INSERT INTO TYPETABLE (TYPE_ID, TYPE_NAME) VALUES (2, 'Round Trip');
+ 
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (1,'Anna Ivanova',359001);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (2,'Ivan Ivanov',359002);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (3,'Maria Peneva',359003);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (4,'Georgi Petkov',359004);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (5,'Georgi Georgiev',359005);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (6,'Stanislav Stanislavov',359006);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (7,'Aleksandra Ilieva',359007);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (8,'Martin Ganev',359008);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (9,'Ivanka Stoilova',359009);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (10,'Dimitar Petrov',359010);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (11,'Petar Dimitrov',359011);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (12,'Stoil Ivanov',359012);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (13,'Todor Yordanov',359013);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (14,'Boris Marinov',359014);
+Insert into CLIENTTABLE (CLIENT_ID,CLIENT_NAME,CLIENT_PHONE) values (15,'Nikola Velikov',359015);
+
+
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (1,'Sofia');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (2,'Varna');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (3,'Shumen');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (4,'Burgas');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (5,'Yambol');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (6,'Lovech');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (7,'Silistra');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (8,'Sliven');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (9,'Ruse');
+Insert into DESTINATION (DESTINATION_ID,DESTINATION_NAME) values (10,'Popovo'); 
+
+
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (1,'Teodor Todorov',359991,1);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (2,'Yordan Penev',359992,1);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (3,'Dimitar Nikolov',359993,1);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (4,'Stoyan Totev',359994,2);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (5,'Georgi Yordanov',359995,2);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (6,'Vasil Stoyanov',359996,2);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (7,'Krasimir Vasilev',359997,3);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (8,'Tanya Krasimirova',359998,4);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (9,'Velichka Teneva',359999,4);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (10,'Presiyan Velikov',359910,4);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (11,'Maria Getseva',359911,5);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (12,'Nikolina Marinova',359912,5);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (13,'Elisaveta Dimcheva',359913,6);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (14,'Kristiyan Dragomirov',359914,7);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (15,'Ekaterina Boyanova',359915,7);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (16,'Boyan Darinov',359916,8);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (17,'Daria Radichkova',359917,9);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (18,'Raya Dobromirova',359918,10);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (19,'Dobromir Hristov',359919,10);
+Insert into EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_NAME,EMPLOYEE_PHONE,POSITION_POSITION_ID) values (20,'Hristo Kozarev',359920,10);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    1,
+    'Big Bus Driver'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    2,
+    'Small Bus Driver'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    3,
+    'Front Desk Operator'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    4,
+    'Tour Operator'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    5,
+    'Developer'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    6,
+    'Secretary'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    7,
+    'Accountant'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    8,
+    'Attourney'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    9,
+    'Cleaning Service'
+);
+
+INSERT INTO positiontable (
+    position_id,
+    position_name
+) VALUES (
+    10,
+    'Customer Support Service'
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    1,
+    TO_DATE('2024-11-01', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-01 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    10,
+    1,
+    1,
+    1
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    2,
+    TO_DATE('2024-11-01', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-01 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    10,
+    1,
+    2,
+    2
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    3,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    15,
+    2,
+    3,
+    3
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    4,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    15,
+    2,
+    4,
+    4
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    5,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    3,
+    5,
+    5
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    6,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    3,
+    6,
+    6
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    7,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    4,
+    1,
+    7
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    8,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    4,
+    2,
+    8
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    9,
+    TO_DATE('2024-11-03', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-03 13:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    5,
+    3,
+    9
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    10,
+    TO_DATE('2024-11-03', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-03 13:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    18,
+    5,
+    4,
+    10
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    11,
+    TO_DATE('2024-11-04', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-04 12:30:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    6,
+    5,
+    11
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    12,
+    TO_DATE('2024-11-04', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-04 12:30:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    6,
+    6,
+    12
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    13,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    7,
+    6,
+    13
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    14,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    7,
+    8,
+    14
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    15,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    8,
+    9,
+    15
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    16,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    20,
+    8,
+    10,
+    1
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    17,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    25,
+    9,
+    6,
+    2
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    18,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    25,
+    9,
+    8,
+    3
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    19,
+    TO_DATE('2024-11-06', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-06 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    25,
+    10,
+    9,
+    4
+);
+
+INSERT INTO reservation (
+    reservation_id,
+    "Date",
+    time,
+    price,
+    transport_id_res,
+    employee_id_res,
+    client_id_res
+) VALUES (
+    20,
+    TO_DATE('2024-11-06', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-06 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    25,
+    10,
+    10,
+    5
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    1,
+    10,
+    1,
+    1
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    2,
+    10,
+    1,
+    2
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    3,
+    15,
+    1,
+    3
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    4,
+    15,
+    1,
+    4
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    5,
+    18,
+    1,
+    5
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    6,
+    18,
+    1,
+    6
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    7,
+    18,
+    1,
+    7
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    8,
+    18,
+    1,
+    8
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    9,
+    18,
+    1,
+    9
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    10,
+    18,
+    1,
+    10
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    11,
+    20,
+    2,
+    11
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    12,
+    20,
+    2,
+    12
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    13,
+    20,
+    2,
+    13
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    14,
+    20,
+    2,
+    14
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    15,
+    20,
+    2,
+    15
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    16,
+    20,
+    2,
+    16
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    17,
+    25,
+    2,
+    17
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    18,
+    25,
+    2,
+    18
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    19,
+    25,
+    2,
+    19
+);
+
+INSERT INTO ticket (
+    ticket_id,
+    price,
+    type_id_tic,
+    reservation_id_tic
+) VALUES (
+    20,
+    25,
+    2,
+    20
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    1,
+    1,
+    TO_DATE('2024-11-01', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-01 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    35
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    2,
+    2,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    40
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    3,
+    3,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    45
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    4,
+    4,
+    TO_DATE('2024-11-02', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-02 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    45
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    5,
+    5,
+    TO_DATE('2024-11-03', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-03 13:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    45
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    6,
+    6,
+    TO_DATE('2024-11-04', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-04 12:30:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    50
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    7,
+    7,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    50
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    8,
+    8,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 11:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    50
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    9,
+    9,
+    TO_DATE('2024-11-05', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-05 12:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    60
+);
+
+INSERT INTO transport (
+    transport_id,
+    destination_id_trans,
+    "Date",
+    time,
+    total_seats
+) VALUES (
+    10,
+    10,
+    TO_DATE('2024-11-06', 'RRRR-MM-DD'),
+    to_timestamp('2024-11-06 10:00:00.000000000', 'RRRR-MM-DD HH24:MI:SSXFF'),
+    60
+);
+
+INSERT INTO typetable (
+    type_id,
+    type_name
+) VALUES (
+    1,
+    'One Way'
+);
+
+INSERT INTO typetable (
+    type_id,
+    type_name
+) VALUES (
+    2,
+    'Round Trip'
+);
+
+
+SELECT TRANSPORT.TRANSPORT_ID, destination_name FROM TRANSPORT
+JOIN DESTINATION ON destination.destination_id=transport.destination_id_trans
+WHERE DESTINATION_ID IN(
+SELECT destination.destination_id FROM DESTINATION WHERE DESTINATION_NAME='&DESTINATION_NAME');
+
+SELECT *
+FROM TICKET
+WHERE RESERVATION_ID_TIC IN (
+ SELECT RESERVATION_ID
+ FROM RESERVATION
+WHERE "Date" = TO_DATE('&Date', 'DD-MM-YYYY');
+
+
+SELECT *
+FROM TICKET
+WHERE RESERVATION_ID_TIC IN (
+SELECT RESERVATION_ID
+FROM RESERVATION
+WHERE TIME = TO_TIMESTAMP('&DateTime', 'DD-MM-YYYY HH24:MI:SS.FF6');
+
+SELECT C.CLIENT_ID, C.CLIENT_NAME, COUNT(T.TICKET_ID) AS NUMBER_OF_TICKETS_SOLD
+FROM CLIENTTABLE C
+JOIN RESERVATION R ON C.CLIENT_ID = R.CLIENT_ID_RES
+JOIN TICKET T ON R.RESERVATION_ID = T.RESERVATION_ID_TIC
+GROUP BY C.CLIENT_ID, C.CLIENT_NAME;
+
+
+SELECT T.TRANSPORT_ID, T."Date", T.TIME, T.TOTAL_SEATS - COUNT(TICKET_ID) AS NUMBER_OF_FREE_SEATS
+FROM TRANSPORT T
+LEFT JOIN RESERVATION R ON T.TRANSPORT_ID = R.TRANSPORT_ID_RES 
+LEFT JOIN TICKET ON R.RESERVATION_ID = TICKET.RESERVATION_ID_TIC GROUP BY T.TRANSPORT_ID, T."Date", T.TIME, T.TOTAL_SEATS;
+
+SELECT CLIENTTABLE.CLIENT_NAME AS C_NAME, RESERVATION."Date" AS T_DATE
+FROM TICKET
+JOIN RESERVATION ON TICKET.RESERVATION_ID_TIC = RESERVATION.RESERVATION_ID
+JOIN CLIENTTABLE ON RESERVATION.CLIENT_ID_RES = CLIENTTABLE.CLIENT_ID
+WHERE RESERVATION."Date" BETWEEN TO_DATE('&StartDate', 'DD-MM-YYYY') AND TO_DATE('&EndDate', 'DD-MM-YYYY')
+ORDER BY   RESERVATION."Date";
+

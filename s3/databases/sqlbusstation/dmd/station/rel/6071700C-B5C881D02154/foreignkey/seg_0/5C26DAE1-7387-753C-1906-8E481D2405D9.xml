@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5C26DAE1-7387-753C-1906-8E481D2405D9" containerWithKeyObject="25DDEB4F-2CF6-6EDC-107F-A174EB7DA762" localFKIndex="5B4593A9-EED0-97E5-2DDE-0BD80A9EAD60" name="Ticket_Reservation_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:50:04 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<referredTableLongName>Reservation</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>75CDB70E-C804-067A-D91C-AAB43EDB0553</referredTableID>
+<keyObject>0136DC62-499F-E473-5903-1455504577B2</keyObject>
+<referredKeyID>0136DC62-499F-E473-5903-1455504577B2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Reservation_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

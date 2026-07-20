@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB163110-E2CC-F184-8377-57C537D84B53" name="Employee">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 10:59:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Employee_ID" id="4038C5AE-92E8-8F94-02E5-FA838B035473">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:00:41 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_Name" id="19E565EC-1DF8-7BEB-B815-32EFFFF32C63">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:00:41 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_Phone" id="2134F062-052F-41E1-3D4F-D118379FE6CE">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:00:41 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Position_Position_ID" id="BBAA7ACD-F827-8D47-C58A-9373060A1D84">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:44:04 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B5575918-735A-CF0A-3DD9-677768A01558" referredColumn="83B3C94B-C9BC-B17E-4E7B-C4556C96776B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="594B6C59-1BA2-533F-775E-C53B5137D6DA" name="Employee_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:00:41 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4038C5AE-92E8-8F94-02E5-FA838B035473"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7BD51ADC-AD7A-8C37-97C1-50A7C03B9B0C" name="Employee_Position_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:44:04 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBAA7ACD-F827-8D47-C58A-9373060A1D84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

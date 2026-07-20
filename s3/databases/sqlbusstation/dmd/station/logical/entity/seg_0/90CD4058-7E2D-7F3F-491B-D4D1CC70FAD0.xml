@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="90CD4058-7E2D-7F3F-491B-D4D1CC70FAD0" name="Type">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>051BA7E7-CDE5-C326-4210-75F272446620</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Type ID" id="F3178946-339C-0B00-8734-C8170AC2A6CE">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>C40E8998-9A84-64F2-7B5F-A0BE787356A4</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Type Name" id="7DF074A1-5037-02B1-03F9-D61FF5D8EA4D">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>CD0F3FFB-618E-2ABE-F66D-3C72465348D4</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4BE2B0D8-2EF4-211E-9E9D-D39A349F17FA" name="Type PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>1D761C3A-B38D-8699-7ED0-AA69FE00CA56</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F3178946-339C-0B00-8734-C8170AC2A6CE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

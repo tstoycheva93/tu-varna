@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B1710BE8-C376-7E58-8EB4-C84EF8FCBDE9" name="Client">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>5220A574-047D-72E8-ABAE-C3C0362520C9</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Client ID" id="07FF4D71-1651-4CEA-4FBE-5B21FAB8E4ED">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>A8D101F3-AE54-ACC4-2930-916AC42A002E</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Client Name" id="ED3FB37F-6352-A01C-E0DA-D09466D2C76F">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>8A34707A-61FA-EC27-D8A6-9B1CAA46E4B1</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Client Phone" id="7E9DDECB-A129-94A4-19F2-8ED2EE647DBF">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>0120D478-6A85-2078-DA88-88FE45A45919</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="84F83506-CFF5-7D12-B009-8A87FF0E8BD3" name="Client PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>B8E11823-42E7-CCFE-0D56-F493894DD983</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>07FF4D71-1651-4CEA-4FBE-5B21FAB8E4ED</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

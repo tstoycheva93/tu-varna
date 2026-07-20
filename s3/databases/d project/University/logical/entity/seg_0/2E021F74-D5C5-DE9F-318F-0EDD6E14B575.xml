@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2E021F74-D5C5-DE9F-318F-0EDD6E14B575" name="Subject">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>188C042E-65D3-EE64-CCE9-22A63909C3E6</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Subject ID" id="6B20DFFE-7940-EBF6-B444-00E7119C1A9C">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>D8B12827-5E46-0CA4-1091-D5D617B98B39</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Semester" id="A5CAF38E-9928-0FE4-64D9-F6E0D4DC1FF8">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>F4CC8A66-6456-0D99-2B8B-8904551AA2EB</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Subject Name" id="6EBBC956-2884-48B2-8734-6762D16847D2">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 12:18:33 UTC</createdTime>
+<generatorID>0C9CA95E-3CDF-CD68-A18C-2CC70A5E1DED</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AF48C2A1-C2A7-78D6-4FD8-53CAB37E10BD" name="Subject_PKv1">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>0E43A71A-EBA1-E683-B6A5-578371CDB315</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6B20DFFE-7940-EBF6-B444-00E7119C1A9C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

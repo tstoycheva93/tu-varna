@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2A35C443-2B91-24B4-F372-1A2BD964BEFD" name="Employee">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>EB163110-E2CC-F184-8377-57C537D84B53</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Employee ID" id="C9688C50-D5E5-4111-C274-7BCA3B79436B">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>4038C5AE-92E8-8F94-02E5-FA838B035473</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Employee Name" id="014C814D-ACF5-2F0E-293A-4252344FD3A3">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>19E565EC-1DF8-7BEB-B815-32EFFFF32C63</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Position ID Empl" id="207B196A-096F-3ED5-0FEF-BF0581FE48B0">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>73A1A9AD-888D-9119-B80B-EB3AB2915ECC</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Employee Phone" id="8F71D85F-5AB3-924A-5817-E11C94CB4410">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>2134F062-052F-41E1-3D4F-D118379FE6CE</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Position Position ID" id="B30C2D11-88C0-CBDD-86CD-C18C65F6DEC8">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>C4251757-AF87-0ADA-A1DA-90BD8F8C8B1C</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<referedAttribute>0EB8C31A-B1E6-598F-1939-11732DC1F904</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="298DB21D-1DAC-97AA-3816-5E591A633B6A" name="Employee PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>594B6C59-1BA2-533F-775E-C53B5137D6DA</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C9688C50-D5E5-4111-C274-7BCA3B79436B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

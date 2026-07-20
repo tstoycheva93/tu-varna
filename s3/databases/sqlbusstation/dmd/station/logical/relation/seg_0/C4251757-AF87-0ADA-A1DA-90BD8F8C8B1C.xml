@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Employee_Position_FK" directorySegmentName="seg_0" id="C4251757-AF87-0ADA-A1DA-90BD8F8C8B1C">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>B5575918-735A-CF0A-3DD9-677768A01558</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<sourcePk>E67B5EA7-13BE-89F3-10DA-F54644EA056F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9473EFFF-B4F8-46D5-1FA4-61345F91A6D7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2A35C443-2B91-24B4-F372-1A2BD964BEFD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

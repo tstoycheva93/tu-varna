@@ -1,0 +1,139 @@
+set define off;
+CREATE TABLE Student 
+(
+    student_id CHAR(8) NOT NULL,
+    sutdent_name VARCHAR2(20) NOT NULL,
+    course INTEGER NOT NULL,
+    student_email VARCHAR2(100),
+    major_id VARCHAR2(10) NOT NULL,
+    PRIMARY KEY(student_id)
+);
+
+CREATE TABLE Major 
+(
+    major_id VARCHAR2(10) NOT NULL, 
+    major_name VARCHAR2(10) NOT NULL, 
+    PRIMARY KEY(major_id)
+);
+
+-- създаване на връзка между две таблица P.K. => F.K.
+ 
+ALTER TABLE Student  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Student_Major_FK  -- име на правилото 
+FOREIGN KEY (major_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES major(major_id); -- име на таблица, където е нашия П.К. и съответно самаа колона П.К.
+
+CREATE TABLE Student_Subject 
+(
+    student_id CHAR(8) NOT NULL, 
+    subject_id VARCHAR2(5) NOT NULL
+);
+
+ALTER TABLE Student_Subject  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Student_Subject_Sudent_FK  -- име на правилото 
+FOREIGN KEY (student_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Student(student_id);
+
+
+CREATE TABLE Subject
+(
+    subject_id VARCHAR2(10) NOT NULL, 
+    semester INTEGER NOT NULL,
+    subject_name VARCHAR2(10),
+    PRIMARY KEY (subject_id)
+);
+
+ALTER TABLE Student_Subject  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Student_Subject_Subject_FK  -- име на правилото 
+FOREIGN KEY (subject_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Subject(subject_id);
+
+CREATE TABLE Teacher_Subject 
+(
+    teacher_id VARCHAR2(10CHAR) NOT NULL, 
+    subject_id VARCHAR2(10CHAR) NOT NULL
+);
+
+ALTER TABLE Teacher_Subject  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Teacher_Subject_Subject_FK  -- име на правилото 
+FOREIGN KEY (subject_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Subject(subject_id);
+
+ALTER TABLE Teacher_Subject  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Teacher_Subject_Teacher_FK  -- име на правилото 
+FOREIGN KEY (teacher_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Teacher(teacher_id);
+
+CREATE TABLE Marks 
+(
+    student_id CHAR(8) NOT NULL ,
+    marks NUMBER(4,2),
+    subject_id VARCHAR2(10) NOT NULL,
+    date_mark DATE,
+    teacher_id VARCHAR2(10CHAR) NOT NULL
+);
+
+ALTER TABLE Marks  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Mark_Student_FK  -- име на правилото 
+FOREIGN KEY (student_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Student(student_id);
+
+
+ALTER TABLE Marks  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Mark_Subject_FK  -- име на правилото 
+FOREIGN KEY (subject_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Subject(subject_id);
+
+
+ALTER TABLE Marks  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Mark_Teacher_FK  -- име на правилото 
+FOREIGN KEY (teacher_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Teacher(teacher_id);
+
+CREATE TABLE Teacher 
+(
+    teacher_id VARCHAR2(10CHAR) NOT NULL, 
+    degree_id VARCHAR2(10CHAR) NOT NULL,
+    phone_number CHAR(10), 
+    teacher_email VARCHAR2(100),
+    PRIMARY KEY(teacher_id)
+);
+
+CREATE TABLE Degree 
+(
+    degree_id VARCHAR2(10CHAR) NOT NULL,
+    deree_name VARCHAR2(10),
+    PRIMARY KEY(degree_id)
+);
+
+ALTER TABLE Teacher  -- име на таблица, в която е F.K.
+ADD CONSTRAINT  Teacher_Degree_FK  -- име на правилото 
+FOREIGN KEY (degree_id) -- име на колона, която е Ф.К за таблицата
+REFERENCES Degree(degree_id);
+
+
+INSERT INTO MAJOR (major_id, major_name)
+VALUES (1, 'KST');
+
+INSERT INTO MAJOR (major_id, major_name)
+VALUES (2, 'TTT');
+
+INSERT INTO MAJOR (major_id, major_name)
+VALUES (3, 'SIT');
+
+INSERT INTO STUDENT(student_id, sutdent_name, course, student_email, major_id)
+VALUES(1, 'Teodor Todorov', 2, 'theotheboss@gmail.com', 3);
+
+INSERT INTO STUDENT(student_id, sutdent_name, course, student_email, major_id)
+VALUES(2, 'Detelina Dimitrova', 1, 'detelinadeteto@gmail.com', 1);
+
+INSERT INTO STUDENT(student_id, sutdent_name, course, student_email, major_id)
+VALUES(3, 'Mariyan Mironov', 4, 'mironkata@outlook.com', 2);
+
+INSERT INTO SUBJECT (subject_id, subject_name, semester)
+VALUES(1, 'OOP', 3);
+
+INSERT INTO SUBJECT (subject_id, subject_name, semester)
+VALUES(2, 'BD', 3);
+
+

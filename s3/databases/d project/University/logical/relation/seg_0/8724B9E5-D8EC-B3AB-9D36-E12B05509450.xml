@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Student&amp;Subject_Subject_FK" directorySegmentName="seg_0" id="8724B9E5-D8EC-B3AB-9D36-E12B05509450">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 12:18:33 UTC</createdTime>
+<generatorID>29DFD692-7F5E-46EF-9D0D-B9192B93D0B8</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<sourcePk>AF48C2A1-C2A7-78D6-4FD8-53CAB37E10BD</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2E021F74-D5C5-DE9F-318F-0EDD6E14B575</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>07A6AC66-91F5-21EA-9664-DA45F4C22FE4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

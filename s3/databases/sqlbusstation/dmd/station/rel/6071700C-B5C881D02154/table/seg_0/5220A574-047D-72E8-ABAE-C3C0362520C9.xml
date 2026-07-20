@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5220A574-047D-72E8-ABAE-C3C0362520C9" name="ClientTable">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:00:53 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Client_ID" id="A8D101F3-AE54-ACC4-2930-916AC42A002E">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:01:51 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_Name" id="8A34707A-61FA-EC27-D8A6-9B1CAA46E4B1">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:01:51 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_Phone" id="0120D478-6A85-2078-DA88-88FE45A45919">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:01:51 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B8E11823-42E7-CCFE-0D56-F493894DD983" name="Client_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:01:51 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8D101F3-AE54-ACC4-2930-916AC42A002E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

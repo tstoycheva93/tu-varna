@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFE5FE9F-8981-9BEE-C2FA-1E45DBDB60CA" name="Degree">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:51:28 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Degree_ID" id="A11D15EA-A1E0-3D3C-E997-A8A97C8F93CF">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:53:36 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Degree_Name" id="9D2A9731-9D1D-2349-1B0B-07F5A44C3670">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:53:36 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3019DD14-9070-8CB2-BC9F-26E738B6AF8F" name="Degree_PK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:53:36 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A11D15EA-A1E0-3D3C-E997-A8A97C8F93CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

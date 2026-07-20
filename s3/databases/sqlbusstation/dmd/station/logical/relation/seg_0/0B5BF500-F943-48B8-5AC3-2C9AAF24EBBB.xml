@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Ticket_Type_FK" directorySegmentName="seg_0" id="0B5BF500-F943-48B8-5AC3-2C9AAF24EBBB">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>DD79C684-44E7-1436-3F25-D0ABE29136F9</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<sourcePk>4BE2B0D8-2EF4-211E-9E9D-D39A349F17FA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>90CD4058-7E2D-7F3F-491B-D4D1CC70FAD0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7332BCB4-0EDD-57FE-A698-B325FACEEBDC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94ABEA30-0F67-ACF5-2689-FDCB604F44BF" name="Teacher&amp;Subject">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:53:48 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Teacher_Teacher_ID" id="5C42CBD8-20A8-11A4-9BC8-D7E3BB38757B">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:54:48 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>0</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<ownDataTypeParameters>,0,10</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B1DD9C8-0865-5CEA-4B9D-C985AC5E6484" referredColumn="72D0DB4C-61CD-759A-F889-72A65762B8DD"/>
+</associations>
+</Column>
+<Column name="Subject_Subject_ID" id="D4F204D0-18BE-EC2F-54FC-A66B9BDB5316">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:54:48 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B2FBA93-AB95-36A6-5A9B-D228D6AAB173" referredColumn="CDAB9D93-95F5-3684-0DFC-08EA2062D58E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9291BBC7-B7F0-C9CA-52F8-CA5EE6AF2924" name="Teacher&amp;Subject_Subject_FK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:59:07 UTC</createdTime>
+<generatorID>AF48C2A1-C2A7-78D6-4FD8-53CAB37E10BD</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4F204D0-18BE-EC2F-54FC-A66B9BDB5316"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10B8CE12-FDC4-C0AB-B0B2-4DFB10CE91F6" name="Teacher&amp;Subject_Teacher_FK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:59:29 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C42CBD8-20A8-11A4-9BC8-D7E3BB38757B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

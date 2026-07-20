@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A07986CA-D4D1-9138-6FBD-35CB5B690A46" containerWithKeyObject="CDB22D82-32F3-4C85-13A9-5D2F7EA1460C" localFKIndex="CB2C0158-3F49-FBD2-ABD4-6226BA0A6B6A" name="Transport_Destination_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:26:05 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<referredTableLongName>Destination</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1C32854B-C16A-4A2E-8AB5-EC40A4861C69</referredTableID>
+<keyObject>CB623E70-FA52-2D15-264C-960A2906B7DC</keyObject>
+<referredKeyID>CB623E70-FA52-2D15-264C-960A2906B7DC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Destination_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

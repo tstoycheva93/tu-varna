@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1C32854B-C16A-4A2E-8AB5-EC40A4861C69" name="Destination">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:23:08 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Destination_ID" id="66A7AC16-417A-7089-3FDB-C205B3FF6911">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:24:12 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Destination_Name" id="33241036-8E85-1279-4A06-0C7305E3CF5A">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:24:12 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CB623E70-FA52-2D15-264C-960A2906B7DC" name="Destination_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:24:12 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="66A7AC16-417A-7089-3FDB-C205B3FF6911"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

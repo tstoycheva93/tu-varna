@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="075DFD4D-EB2A-33E5-8AD4-CE8928985620" name="Student">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:02:03 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Student_ID" id="50B6317B-1BEB-AF7A-7BD0-742655476EA5">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:41 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Student_name" id="6E05543C-925B-8173-BE3F-7D13F96D9827">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:41 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Course" id="725FA6DE-EF7C-4E2B-00D6-EAA1107A5F20">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:41 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="E-Mail" id="E16EBBA8-D821-0CD7-8691-65A4C44CD02E">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:41 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Major__Major_ID" id="F5236362-0DB8-322F-80D0-933998376FEE">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 12:00:02 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C2C6F68-D7DC-A600-650C-904C682BF8B5" referredColumn="2F4A10F6-DFF1-8735-CB64-108D5AF68B80"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7024062-E05C-2C1D-5C18-3080A4786C1B" name="Student_PK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:41 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50B6317B-1BEB-AF7A-7BD0-742655476EA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="302C49FF-39CB-AE88-9AAE-3972977A9613" name="Student_Major__FK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 12:00:02 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5236362-0DB8-322F-80D0-933998376FEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

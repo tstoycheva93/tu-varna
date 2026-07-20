@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="18544E91-8B97-B69F-2FDF-0A8AABBD5187" name="Teacher">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:06:46 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Degree_ID" id="72D0DB4C-61CD-759A-F889-72A65762B8DD">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:08:29 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Degree_Degree_ID" id="0763DB0F-BFB3-8DAE-2B78-3BCBB1CC16F5">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 12:09:33 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DC8B2D10-09A9-3D14-2379-30568597CCBE" referredColumn="A11D15EA-A1E0-3D3C-E997-A8A97C8F93CF"/>
+</associations>
+</Column>
+<Column name="Phone_number" id="983D396B-6843-5313-B9ED-E88E7CA3A172">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:08:29 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="E-Mail" id="383E18F6-F8BC-1B36-81B8-FCD8DCA88684">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:08:29 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="939CE3D0-0DBB-6EE4-0A56-4B3B79C27C70" name="Teacher_PK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:08:29 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72D0DB4C-61CD-759A-F889-72A65762B8DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D7AD8BFB-6D69-622F-C193-2E4F741E6BA4" name="Teacher_Degree_FK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-08 11:58:07 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0763DB0F-BFB3-8DAE-2B78-3BCBB1CC16F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

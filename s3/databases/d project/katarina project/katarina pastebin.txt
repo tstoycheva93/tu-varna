@@ -1,0 +1,74 @@
+create table avtomobil(
+cena_za_den  int not NULL,
+avtomobil int,
+poziciq_id int,
+model_marka id);
+
+Alter table avtomobil add constraint avtomobil PK  Primary key(avtomobil, poziciq id);
+
+Alter table avtomobil add constrain avtomobil model_marka FK Foreign key( model_marka id)reference model(model_marka id),
+
+Alter table avtomobil  add constrain avtomovil vid FK Foreign key (Vid_Vid id) reference vid (vid_vid id);
+
+create table klient (
+ime varchar(20),
+adress int,
+telefon int,
+klient_id int));
+
+Alter table klient  add constraint klient_PK Primary key(klient_id)
+
+create table sluzitel(
+ime varchar (20),
+pozicia int,
+telefon int,
+sluzitel int));
+
+Alter table sluzitel add constraint sluzitel_PK Primary key( sluzitel_id);
+
+alter table sluzitel add constraint sluzitel_pozicia PK  Primary key( poziciq);
+
+create table zaimene_pod_naiam (
+klient int,
+avtomobil int,
+sluzitel int,
+data_na_zaiam date,
+broi_dani int);
+
+Alter table zaimene_pod_naiam add constrain zaimene_pod_naiam_avtomovil FK Foreign key (avtomobil_avtomobil,avtomobil_pozicia id) reference zaimene_pod_naiam (avtomobil_avtomobil,avtomobil_pozicia id);
+
+alter table zaimene_pod_naiam  add constrain zaimene_pod_naiam_klient FK Foreign key (klien_klient id) referencezaimene_pod_naiam (klien_klient id);
+
+Alter table zaimene_pod_naiam  add constrain zaimene_pod_naiam_sluzitel FK Foreign key (sluzitel_sluzitel id) reference zaimene_pod_naiam (sluzitel_sluzitel id);
+
+create table vid(
+vid_id  int,
+vid name varchar (20));
+
+alter table vid add constraint vid  PK  Primary key(vid_id);
+
+create table marka (
+marka name varchar (20),
+marka_id int NOT NULL));
+
+alter table marka add constraint marka  PK  Primary key(marka_id);
+
+create table model(
+model name varchar(20),
+marka_id int,
+marka_marka_id int));
+
+alter table model add constraint model  PK  Primary key(model_id);
+
+Alter table model add constraint model model_marka_id FK Foreign key (marka_marka id) reference model (marka_marka id);
+
+create table poziciq (
+poziciq_id int,
+poziciq_name varchar (20));
+
+alter table poziciq add constraint poziciq  PK  Primary key(poziciq id);
+
+insert into avtomovil (cena_za_den_a,avtomobil_a,poziciq_id,model_marka_a)
+values(1000, 'Sport', 'L' ,'FORD');
+
+

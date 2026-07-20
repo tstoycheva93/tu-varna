@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E5F7DA11-92CA-5E25-E662-F0D42D59EA9C" name="Teacher">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>18544E91-8B97-B69F-2FDF-0A8AABBD5187</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Degree ID" id="2175F773-4B1F-2A99-DC6F-E405F1817DC1">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>0030FC49-E943-A786-6E30-3DCD198F8384</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<referedAttribute>52ACDD9C-38FD-676E-6F7F-D3C7BC79C96D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone number" id="C56AC87D-FEC5-20CD-E7F1-D7E7C59108FA">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>983D396B-6843-5313-B9ED-E88E7CA3A172</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="E-Mail" id="2EDA7691-9644-1E73-BC33-EB8E00FC908D">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>383E18F6-F8BC-1B36-81B8-FCD8DCA88684</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C7671EF8-73F7-8AFC-5365-88EAE9CCE9B8" name="Teacher_PK">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>939CE3D0-0DBB-6EE4-0A56-4B3B79C27C70</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2175F773-4B1F-2A99-DC6F-E405F1817DC1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

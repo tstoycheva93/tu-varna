@@ -1,0 +1,15 @@
+The task is: Create a functional database with data about Bus Transport, which keeps information about the following units:
+1. Employee - name, position, phone number;
+2. Client - name, phone, number;
+3. Ticket - type, destination, price;
+4. Reservation - destination, date, time, price, employee, client.
+
+IMPORTANT: Each client may reserve more than one ticket; There can be more than one transports to each destination. Tickets can be reserved and searched by date, time, or destination. Queries can be made about the tickets that were purchased by an individual client; the number of free seats for an individual bus transport ride; and the ticket sales for a period between two dates, ordered chronologically.
+
+The database must be normalized and it must allow:
+1. Input and editing of the data;
+2. Searching/reserving tickets by date, time, destination;
+3. Queries about: 
+- The tickets that were purchased by an individual client;
+- Number of free seats for an individual bus transport ride that is determined by its destination, date and time;
+- Ticket sales for a period between two dates, ordered chronologically.

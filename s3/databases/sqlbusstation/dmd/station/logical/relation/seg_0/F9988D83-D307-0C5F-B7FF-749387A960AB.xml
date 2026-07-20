@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Reservation_Client_FK" directorySegmentName="seg_0" id="F9988D83-D307-0C5F-B7FF-749387A960AB">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-11-02 07:33:19 UTC</createdTime>
+<generatorID>884E0B26-46C5-2B27-0197-0C6CE559B49C</generatorID>
+<ownerDesignName>station</ownerDesignName>
+<engineerTo>
+<item key="6071700C-8360-E59A-729F-B5C881D02154" value="true"/>
+</engineerTo>
+<sourcePk>84F83506-CFF5-7D12-B009-8A87FF0E8BD3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B1710BE8-C376-7E58-8EB4-C84EF8FCBDE9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F0A9E6E8-3F6C-965C-E69A-4564A06EF0CC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2AB41EBE-321C-F2CE-15DB-7283AC961C99" name="Mark">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>310CD446-9FC5-7755-E281-98FA008A2525</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Student ID" id="ED15E72D-BF74-3470-538C-F57465F4086D">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>D9D2BAF0-6763-491C-17AA-FE649A763652</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Mark" id="F7C258C5-B42F-1AC1-A4A4-158FC58C5CE2">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>75DC864C-99B8-B143-4300-22701F6BDA8F</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Subject name" id="7001C2C4-729D-0DB4-396A-ECAC5158F9E0">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>97DF5BDC-D370-CD4F-7AAC-6233B147D125</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Date" id="868E6599-5C2D-CFDA-DFCB-DD7570D525BA">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:14:21 UTC</createdTime>
+<generatorID>69348F29-40C7-38D2-ABBE-93D4C998EF5A</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Student ID1" id="C2112EBE-B941-861F-AE7C-B7ED585ED4CD">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:40:34 UTC</createdTime>
+<generatorID>338859EC-B0E4-BAF0-2C73-5B59C6DA832F</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<referedAttribute>4E958ED6-DCE9-FE05-0E7C-08E721B1E04E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Subject ID" id="D95E65C0-32B9-0FB9-AE0D-88ACDD02B6C1">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:41:10 UTC</createdTime>
+<generatorID>2B6F761B-5B7B-069C-1271-BD41E02B3C8C</generatorID>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<referedAttribute>6B20DFFE-7940-EBF6-B444-00E7119C1A9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

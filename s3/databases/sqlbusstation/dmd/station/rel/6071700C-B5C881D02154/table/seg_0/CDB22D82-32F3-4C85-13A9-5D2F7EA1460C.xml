@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDB22D82-32F3-4C85-13A9-5D2F7EA1460C" name="Transport">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:10:25 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Transport_ID" id="F18A3D33-B455-DA45-7873-0383C2B6219C">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Destination_ID_Trans" id="CD9B6A4F-30D8-70C9-0F5B-3BD844558A09">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A07986CA-D4D1-9138-6FBD-35CB5B690A46" referredColumn="66A7AC16-417A-7089-3FDB-C205B3FF6911"/>
+</associations>
+</Column>
+<Column name="Date" id="29FBDB16-644A-222F-2A92-7229F2821C59">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Time" id="C7EDF429-E18B-CE2B-B460-4A448A35B54F">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Total_Seats" id="78B8D099-C06F-3C50-4581-6BF03AB81988">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D42C9A8D-79A6-0426-AEE7-6A92540EA720" name="Transport_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:13:03 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F18A3D33-B455-DA45-7873-0383C2B6219C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CB2C0158-3F49-FBD2-ABD4-6226BA0A6B6A" name="Transport_Destination_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 14:26:05 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD9B6A4F-30D8-70C9-0F5B-3BD844558A09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="25DDEB4F-2CF6-6EDC-107F-A174EB7DA762" name="Ticket">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:01:58 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Ticket_ID" id="EE77440C-5238-87C6-9CD4-7B88352C5387">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:04:14 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Price" id="7E8FE11C-297A-31D7-F0E5-9C4A4F010DF0">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:04:14 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Type_ID_Tic" id="DA3FD347-550D-7B56-0509-52F5250AAD1F">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:04:14 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD79C684-44E7-1436-3F25-D0ABE29136F9" referredColumn="C40E8998-9A84-64F2-7B5F-A0BE787356A4"/>
+</associations>
+</Column>
+<Column name="Reservation_ID_Tic" id="1E2683CE-3E73-6D08-5454-229875604528">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:47:04 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C26DAE1-7387-753C-1906-8E481D2405D9" referredColumn="88B716A1-5663-BD28-D01B-CC7C41CC6638"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E99CB51C-256D-BD5D-C200-A67060292CB9" name="Ticket_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-19 11:04:14 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE77440C-5238-87C6-9CD4-7B88352C5387"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E8F47FF-471F-7871-320E-9AD8703DA96C" name="Ticket_Type_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:45:14 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA3FD347-550D-7B56-0509-52F5250AAD1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5B4593A9-EED0-97E5-2DDE-0BD80A9EAD60" name="Ticket_Reservation_FK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:50:04 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E2683CE-3E73-6D08-5454-229875604528"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

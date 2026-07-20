@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="2B6F761B-5B7B-069C-1271-BD41E02B3C8C">
+<createdBy>Yoga 12</createdBy>
+<createdTime>2021-11-03 17:41:10 UTC</createdTime>
+<ownerDesignName>University</ownerDesignName>
+<engineerTo>
+<item key="BABEB1F5-CD96-4480-9678-C83BC46B0EAC" value="true"/>
+</engineerTo>
+<sourcePk>AF48C2A1-C2A7-78D6-4FD8-53CAB37E10BD</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2E021F74-D5C5-DE9F-318F-0EDD6E14B575</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>2AB41EBE-321C-F2CE-15DB-7283AC961C99</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

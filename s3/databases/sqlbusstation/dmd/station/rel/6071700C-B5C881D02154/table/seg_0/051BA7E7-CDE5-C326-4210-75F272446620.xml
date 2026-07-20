@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="051BA7E7-CDE5-C326-4210-75F272446620" name="TypeTable">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:42:05 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Type_ID" id="C40E8998-9A84-64F2-7B5F-A0BE787356A4">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:42:45 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Type_Name" id="CD0F3FFB-618E-2ABE-F66D-3C72465348D4">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:42:45 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1D761C3A-B38D-8699-7ED0-AA69FE00CA56" name="Type_PK">
+<createdBy>Teodora</createdBy>
+<createdTime>2023-10-25 12:45:06 UTC</createdTime>
+<ownerDesignName>station</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C40E8998-9A84-64F2-7B5F-A0BE787356A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
