@@ -1,0 +1,98 @@
+ISO/IEC 11801 e standart za:
+- strukturni kabelni sistemi
+
+v kakvi razmeri se sreshta MMF optichno vlakno
+- 62.5/125
+- 50/125
+
+IEEE 802.11n
+- 2.4 GHz
+
+3 way handshake:
+- tcp
+
+beacon interval:
+- interval ot vreme v koito se predava beacon frame i sluji sa sync devices koito polzvat edn LAN mreja интервал от време, през който AP изпраща служебна информация за SSID и настройките за криптиране
+
+kakuv e razmerut na MTU koqto ethernet moje da prenese:
+- 1518 bytes
+
+koi NE E za strukturni kabelni sistemi
+- ISO/IEC 27001
+
+koi NE sa verni?
+- tcp e nenadejden
+- dinamichni ports sa 1024-49151
+
+koi sa verni?
+- vsichki za DHCP
+
+koi sa verni?
+- registered porst sa 1024-49151
+- UDP nqma info izlishuk
+
+kolko broadcast domains ima router s 4 ports dva ot koito sa na edna IP mreja
+- 3
+
+komanda za rejim na konfigurirane v OSPF:
+- router ospf 201 /chislo/
+
+komanda za rejim config na RIP:
+- router rip
+
+komanda za suzdavane na virtualna lokalna mreja nomer 121:
+- switch (vlan) # vlan 121 name Students
+
+pri bezjichni mreji channel e:
+- tochnata chestota na obmena na danni
+
+ssid e:
+- imeto na mrejata
+
+pri koi protocol infinity=16
+- ripv1
+
+pri config na cisco router s koq komanda se zadava protocol na kanalno nivo
+- encapsulation hdlc
+
+vqrno li e che tcp socket dst ip i dst port samo
+- ne ima i source
+
+vqrno li e che supperneting e za namalqane br redove v m tablica
+- da
+
+1.	Посочете командата, с която порт на комутатор се "изважда", от конкретна виртуална локална мрежа Изберете едно 
+Switch (config-if) #ino switchport access vian 121
+
+2.	Посочете вярното твърдение 
+• VLSM се използва за разделяне на една IP мрежа на подмрежи с различна дължина на маската 
+
+Изберете едно
+- Протокол FTP използва транспортен протокол ТСР и порт 20
+•  Протокол FTP използва транспортен протокол ТСР и портове 20 и 21
+
+на кой слой от ТСР-ИП модела рабоят ТСР УДП 
+- трети транспортен слой
+
+последна стъпка от 3 ръкостискане
+- ack ot client
+
+komanda s koqto se dobavq port kum VLAN s nomer 121:
+- switch (config-if) #switchport access vlan 121
+
+komanda za iztrivane na VLAN:
+- switch (vlan) #no vlan 121
+
+
+
+CIDR=supernetting=VLSM za celiq internet
+
+0-1023 - dobre izvestni za populqrni uslugi
+1024-49151 - registrirani a potrebitelski procesi i apps
+49152 - 65535 - dinamichni/chastni - za klientski prilojeniq sus sesiq
+
+
+
+
+
+

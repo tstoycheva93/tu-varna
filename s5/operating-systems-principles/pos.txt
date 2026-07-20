@@ -1,0 +1,537 @@
+os.cs.tu-varna.bg
+pos3114 - Tedi97
+
+<name> [-<options>] [<arguments>] - commands
+/ - root dir
+
+<path>/<filename>
+abs: /home/os/dir/file
+rel: ./dir/file - pri direktna vruzka s faila
+
+komandi:
+
+help echo - vgradena pomosht
+man dir
+passwd - promqna na parola
+ls <path>/<dir_name> - izvejdane na sudurjanie
+man ls - za manual, up, down, izliza se s Q
+rmdir - iztrivane na direktoriq - samo prazna direktoriq
+
+ls <path>/<file_name>
+cat > <path>/<file_name> - suzdavane na file
+
+cat> ./firstfile
+Hello there!
+ctrl+D - prezapisvane bez redaktirane
+
+rm <path>/<file_name> - iztrivane na file
+rm ./firstfile
+
+cp <path>/<file_name1> <path>/<file_name2> - kopirane na file
+cp ./firstfile ./filecopy
+
+mv <path>/<file_name> - premestvane
+]
+cat <path>/<filename>
+more <path>/<filename>
+less <path>/<filename> - izvejdane sudurjanie na file (enter, space, q-exit)
+
+diff <path>/<filename1> <path>/<filename2> - izkarva razliki v txt
+
+grep "<string>" <path>/<filename> - tursi niz v txt, izkarva celiq red
+grep "Hello word" *.c
+
+wc <path>/<filename> - word, line, char count
+wc (-c / -w /-l) lab1.c
+
+> - prenasochvane stdout
+< - prenasochvane stdin
+2> - pren stderr
+>& - pren stdout i stdin
+
+primer:
+ls /etc > list.txt
+myprog < data.txt
+
+ls ./examples > tempfile
+wc -w ./tempfile
+rm ./tempfile
+
+ls ./examples | wc -w
+
+
+#! /bin/bash
+name=Jane
+echo "My name is $name" - razpoznava $ promenliva
+echo 'My name is &name" - ne razpoznava
+
+#! /bin/bash
+echo 'ls -l' - tekushta dir
+
+konstrukcii ot komandi:
+1. c1; c2; c3
+2. c1 && c2
+3. c1 || c2
+4. c&  tells the shell to execute it without waiting for it to finish
+
+sravnqvane na simvolni nizove
+a=abc
+b=def
+[ &a=&b ] - proverqva sudurjanieto i vrushta false
+
+if [ -f &1 ] then cat &1
+elif [ -d &1 ] then ls -l &1
+else echo &1 is neither file nor dir
+
+for i in Monday Tuesday Friday
+do
+echo today is ${i}
+done
+
+for i in *
+do 
+if [ -d &i ] then ??
+
+while <test_commands> do <commands> done
+echo "the sum is $sum"
+
+while [ $i = ...???]
+
+until [ $i -eq 0 ]
+do
+echo $i
+i=$[$i+1]#! 
+done
+
+echo "enter yes no"
+read answer
+case $answer in
+y) echo yes;;
+n) echo no;;
+*) echo unknown ansrer;;
+esac
+
+[function] <name> ()
+{<commands>}
+
+
+filefind ()
+{ cd $1;
+for i in *
+do if [ $i=$2 ] then echo 'pwd'/$i
+elif [ -d $i ] then filefind $i $2
+fi
+done
+cd..
+}
+filefind $1 $2
+
+
+UPR 5 GNU COMPILER COLLECTION
+
+gcc -o myprog main.c lib.c -lpthread
+няма обектен код, компилатора генерира файловете
+
+main.c:
+extern int counter; - extern znachi che counter e definirana v drug file.c (int counter=0;)
+
+header1.h - int counter;
+header2.h - include header1;
+main.c - include header1.h, include header2.h
+
+kompilatora izvejda suobshtenie za dublirane, izbqgva se chrez dir:
+
+#ifndef __HEADER1__
+#define __HEADER1__
+int counter
+#endif -------> header1
+include header1 --------> header2
+include header1,header2 --------> main.c
+
+Makefile:
+all: compile run
+compile: main.c
+gcc -o myprog main.c hello.c
+run:
+./myprog
+
+$ make compile
+$ make run
+$ make all
+
+input sort output i main - domashno s makefile
+
+UPR 6 PROCESI
+sustoqniq
+
+startirane na procesi background:
+<command> &
+
+premestvane vuv foreground:
+fg %n (poredniq nomer ot komanda jobs)
+
+cancel s ctrl c
+
+ps - info za aktivni procesi
+ps ax - sistemni i obvurzani s terminali procesi
+ps au - s info za user cpu stats
+pstree - vruzka mejdu procesite
+w, who - users
+top - precizna info za procesite i priority, exit s q
+kill -9 <pid> - s process id
+killall <program_name> - vsichki s tova ime
+
+c - dva vlojeni for do 1 000 000
+start, determine pid, destroy
+
+UPR 7 DOSTUP DO OBSHTI RESURSI
+
+critical section - trqbva v neq da ima samo edin process
+tam kudeto v koda ima obrushtenie kum obsht resurs
+izvun neq procesa moje da e vuv vs sustoqniq no v neq samo run, ne trqbva cs da ima prioritet
+
+obshta struktura: 
+do{ entry section, critical s, exit s, remainder s} done
+
+obshta pamet se zaema s getmem() - 64b, vrushta pointer kum sebe si, vika se s 1693
+
+
+#inlude <stdio.h>
+#include <shared.h>
+
+main(){
+
+int *common, i, k, a;
+common = (int *)getmem(1693);
+
+for (i=1; i<=1000000;i++) { ... }
+
+v script:
+
+#!/bin/bash
+gcc -O0 -o init init.c -lshared
+gcc -O0 -o init init.c -lshared
+gcc -O0 -o init init.c -lshared
+gcc -O0 -o init init.c -lshared
+
+echo "Running now"
+./init
+./inc &
+./dec &
+
+$ ./show
+
+
+UPR8 ZASHTITA NA KRITICHNA SEKCIQ
+
+iziskvaniq:
+- samo po edin aktiven proces
+- chetene i apis da sa nedelimi v OP
+
+instrukcii tip test_ , _set
+-ts(x) - dvoichna, ustanovqva novata stoinost na x da e 1 i vrushta starata stoinost, ima 1 parameter flag = 1, a ret vrushta starata stoinost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pos3114@LinuxOS:~$ cd upr3/upr
+pos3114@LinuxOS:~/upr3/upr$ nano upr3
+pos3114@LinuxOS:~/upr3/upr$ $ ./upr3 Teodora Stoycheva
+-bash: $: command not found
+pos3114@LinuxOS:~/upr3/upr$ ./upr3 Teodora Stoycheva
+-bash: ./upr3: Permission denied
+pos3114@LinuxOS:~/upr3/upr$ chmod u+x upr3
+pos3114@LinuxOS:~/upr3/upr$ ./upr3 Teodora Stoycheva
+My name is
+./upr3: line 2: 1: command not found
+pos3114@LinuxOS:~/upr3/upr$ nano upr3
+pos3114@LinuxOS:~/upr3/upr$ ./upr3 Teodora Stoycheva
+My name is Teodora Stoycheva
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_1
+pos3114@LinuxOS:~/upr3/upr$ chmod u+x upr3_1
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_1
+10 Jane Smith
+pos3114@LinuxOS:~/upr3/upr$ ls -l
+total 8
+-rwxr--r-- 1 pos3114 pos3114 36 Oct 18 12:56 upr3*
+-rwxr--r-- 1 pos3114 pos3114 50 Oct 18 12:58 upr3_1*
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ chmod u+x upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad1 10 5
+sum: 0
+division: 0
+multiplication: 0
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$
+pos3114@LinuxOS:~/upr3/upr$ .upr3_zad1 10 5
+-bash: .upr3_zad1: command not found
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad1 10 5
++
+-
+upr3 upr3_1 upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad1 10 5
+./upr3_zad1: line 2: +: syntax error: operand expected (error token is "+")
+-
+upr3 upr3_1 upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad1
+pos3114@LinuxOS:~/upr3/upr$
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad1 10 5
+sum 15
+division 5
+multiplication 50
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ chmod u+x upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad2 dom
+-r
+./upr3_zad2: line 2: -d: command not found
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad2 dom
+./upr3_zad2: line 5: syntax error: unexpected end of file
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad2 dom
+pos3114@LinuxOS:~/upr3/upr$ mkdir test
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad2 test
+test is a readable directory
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad3
+pos3114@LinuxOS:~/upr3/upr$ chmod u+x upr3_zad3
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad3 upr3 upr3_1
+-a upr3
+./upr3_zad3: line 4: -a: command not found
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad3
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad3 upr3 upr3_1
+-a $file1 && -a $file2snano z
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad3
+pos3114@LinuxOS:~/upr3/upr$ upr3_zad2
+-bash: upr3_zad2: command not found
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad2
+pos3114@LinuxOS:~/upr3/upr$ nano upr3_zad3
+pos3114@LinuxOS:~/upr3/upr$ ./upr3_zad3 upr3 upr3_1
+upr3_1 is newer
+pos3114@LinuxOS:~/upr3/upr$
+
+
+all: compile install clean
+
+compile: main.o unit.o
+
+
+
+#include <stdio.h>
+#include <shared.h>
+
+int main() {
+int *counter, i, k, a;
+
+counter=(int *)getmem(1693);
+for (i=1;i<=1000000;i++){
+a = *counter;
+a = a-1;
+*counter = a;
+for (k=0;k<1000;k++);
+}
+printf("P2 process has ended.\n");
+}
+
+
+
+#include <stdio.h>
+#include <shared.h>
+
+int main() {
+int *counter, i, k, a;
+
+counter = (int *)getmem(1693);
+
+for (i=1; i<1000000; i++) {
+a = *counter;
+a = a+1;
+*counter = a;
+for (k=50;k<90000;k++);
+}
+printf("P1 process edned.\n");
+}
+
+#include <stdio.h>
+#include <shared.h>
+
+int main (){
+int *counter;
+counter = (int *)getmem(1693);
+printf("Common value is %d.\n", *counter);
+}
+
+
+
+#include <stdio.h>
+#include <shared.h>
+
+int main(){
+int *counter;
+
+counter=(int *)getmem(1693);
+*counter=0;
+printf("Initial value is %d.\n", *counter);
+}
+
+UPR9 SEMAFORI
+
+P(S) izpulnqva s-=1 (opitva se) (na vhoda)
+V(S) izpulnqva s+=1 (na izhoda)
+
+sem_t sem_init(n1693), n-nomer na semafora
+void sem_set(sem_t sem, int value) - prisvoqvane nach stoinost
+
+operaciq p(s) - void PS (sem_t sem)
+operaciq v(s) - void VS (sem_t sem)
+
+
+UPR 10 NISHKI
+
+poxis threads - pthreads
+kompilirane: gcc -o <exe> <source> -lpthread
+gcc -o zad zad.c -lpthread
+biblioteka: pthread
+header: pthread.h
+
+suzdavane na nishka:
+int pthread_create - zapazva unikalno id
+
+zavrshvane:
+exit(), 
+void pthread_exit(void *status)
+
+#include<pthread.h>
+#include<stdio.h>
+
+void *Plus() {
+int k,i;
+for (int i=0; i<=100; i++) {
+printf("+\n");
+for (k=0;k<100;k++);
+}
+}
+
+void *Minus() {
+int k,i;
+for (int i=0; i<=100; i++) {
+printf("-\n");
+for (k=0;k<100;k++);
+}
+}
+
+void *Dot() {
+int k,i;
+for (int i=0; i<=100; i++) {
+printf(".\n");
+for (k=0;k<100;k++);
+}
+}
+
+int main() {
+pthread_t t1, t2, t3;
+pthread_create (&t1, NULL, Plus, NULL);
+pthread_create (&t2, NULL, Minus, NULL);
+pthread_create (&t3, NULL, Dot, NULL);
+
+printf("\n");
+
+printf("Creating thread %lu\n", t1);
+printf("Creating thread %lu\n", t2);
+printf("Creating thread %lu\n", t3);
+
+pthread_exit(NULL);
+}
+
+file - logicheska posledovatelnost ot bytes
+
+-atributi
+-file ukazatel
+-pravo na dostup
+
+prava na dostup:
+-read, write, execute
+
+kategorii potrebiteli:
+-user - sobstvenik
+-grupa - potrebiteli
+- other - ne sa ot grupata ili sobstvenik
+
+smqna chrez chmod [ugoa] +- rwx
+
+
+file -rwx -x --x 1 manager users 
+
+rwx- 
+4210
+
+5=read, execute
+3-write, execute
+7-read, write, execute
+
+chmod 742 send
+user - 7 (all) rwx
+group - 4 (read write) rw-
+other - 2 (write) -w-
+
+===Otvarqne na file
+
+int fd=open(const char*path, int flags, int mode);
+
+flags: O_CREAT, O_RDONLY, O_WRONLY, O_RDWR, kombinirat se s |
+
+mode: prava za dostup (0742)
+
+===Zapis vuv file
+
+int write (int fd, const void *buff, size_t size);
+
+===Chetene ot file
+
+int read (int fd, const void *buff, size_t size);
+buff = pointer kum pametta, kudeto shte se zapisvat dannite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
