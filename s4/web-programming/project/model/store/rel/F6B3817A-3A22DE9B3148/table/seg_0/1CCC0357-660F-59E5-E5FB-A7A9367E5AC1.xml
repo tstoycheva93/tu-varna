@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1CCC0357-660F-59E5-E5FB-A7A9367E5AC1" name="Job">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:51:45 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="94D68B73-4791-3DC0-ADBE-9E3265F8C8A8">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:52:20 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="CCCBB5B2-748B-02B8-276D-7669F5391832">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:52:20 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C0B8415-CD02-5B6C-D50B-A5EFAE89E9E0" name="Job_PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:54:12 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94D68B73-4791-3DC0-ADBE-9E3265F8C8A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

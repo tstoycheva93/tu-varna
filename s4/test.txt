@@ -1,0 +1,20 @@
+13 - gs lekciq OK
+14 - mpt hw OK
+14 - ps lekciq OK
+15 - web lekciq OK
+15 - oop test OK
+15 - ps upr OK
+17 - gs upr OK
+20 - oop proekt 12:00 OK
+21 - ps osvob OK
+21 - mpt upr OK
+21 - gs ocenka OK
+22 - oop OK
+23 - web upr OK
+29 - web lekciq osv ОК
+30 - web proekt OK
+
+20 - oop izpit
+24 - oop proekt
+
+proekt - suobrazqvane tipove na danni da sa chisla, metodi da sa private ili public samo ako se polzvat, poletata da se suobrazqvat s logikata i da e chista, metodite trqbva da rabotqt s obekti a ne sus stringove, menuto da ne e switch case, a hashmap, dokumentaciq za vs podrobno i testvaneto, greshno vuvedeni danni da se obrabotvat s exceptioni, a ne stringove, menu da e v otdelen klas, a v maina samo da se suzdava instanciq, da e optimiziran

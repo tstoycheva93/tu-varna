@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3F6C04E-0104-5EEE-1C7C-E1EFA1705CC3" name="Client">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:56:26 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="6C967B14-848B-039B-2127-FBC6AF94318D">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:57:49 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="0274EA8C-DDE5-3C01-EDE6-B66FDE53B51E">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:57:49 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone" id="E3B4B394-D2E0-6CF0-73A4-A6E8DDF927EF">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:57:49 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B04E49BC-E361-3A3E-DFFC-C1B73DA19EF1" name="Client_PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:57:49 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C967B14-848B-039B-2127-FBC6AF94318D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

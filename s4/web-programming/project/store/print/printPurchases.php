@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Purchases</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      margin: 20px;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    .table-container {
+      margin-top: 20px; 
+      width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+
+    .links-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .home-link {
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 15px 30px;
+      border-radius: 5px;
+      margin-left: 10px; /* Add some space between links */
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-link:hover {
+      background-color: #d0d0d0;
+    }
+    @media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+<?php
+include "../config.php";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT purchases.*, clients.name AS clientsName, employees.name AS emplName
+        FROM purchases 
+        LEFT JOIN employees ON purchases.employeesKey = employees.id
+        LEFT JOIN clients ON purchases.clientsKey = clients.id";
+$result = $conn->query($sql);
+echo "<div class='table-container'>";
+echo "<table border='1'>";
+echo "<tr><th>Client</th><th>Employee</th><th>Date</th><th>Price</th><th>Products</th></tr>";
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>".$row['clientsName']."</td>";
+        echo "<td>".$row['emplName']."</td>";
+        echo "<td>".$row['dateOf']."</td>";
+        echo "<td>".$row['price']."</td>";
+        echo "<td>";
+            $purchaseId = $row['id'];
+            $sql_items = "SELECT products.name 
+                          FROM items 
+                          INNER JOIN products ON items.productsKey = products.id 
+                          WHERE items.purchasesKey = ?";
+            $stmt_items = $conn->prepare($sql_items);
+            $stmt_items->bind_param("i", $purchaseId);
+            $stmt_items->execute();
+            $result_items = $stmt_items->get_result();
+            if ($result_items->num_rows > 0) {
+                while ($item_row = $result_items->fetch_assoc()) {
+                    echo $item_row['name'] . "<br>";
+                }
+            } else echo "No products.";
+                        echo "</td>";
+            echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='4'>0 results</td></tr>";
+}
+echo "</table>";
+$conn->close();
+?>
+<div class="links-container">
+  <a href='../edit/editPurchases.php' class="home-link">edit</a>
+  <a href='../delete/deletePurchases.php' class="home-link">delete</a>
+  <a href='../index.php' class="home-link">home</a>
+</div>
+
+</body>
+</html>
+

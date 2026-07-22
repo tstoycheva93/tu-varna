@@ -1,0 +1,133 @@
+.486
+.model flat, stdcall
+includelib \masm32\lib\kernel32.lib
+ExitProcess proto:DWORD
+.data
+A               dd      23,34,37,38,41,44,57,61,64,72   
+BR              dd      0   
+N               dd      10
+RANGE_START     equ     30
+RANGE_END       equ     55
+.code
+start:  
+    lea esi, A 
+    mov ecx, N
+    mov ebx, BR
+    call counting
+    add BR, eax
+    Invoke ExitProcess, 0
+
+counting proc
+    ProcessArray:
+        mov eax, [esi]
+        add esi, 4
+        cmp eax, RANGE_START
+        jl notInRange
+        cmp eax, RANGE_END
+        jg notInRange
+        inc ebx
+    notInRange:
+        loop ProcessArray
+    mov BR, ebx
+    ret
+counting endp
+
+end start
+
+-----------------------------------
+
+.data
+A:             .word    23,34,37,38,41,44,57,61,64,72   
+BR:            .word     0   
+N:             .word     10
+ 
+ 
+.text
+.global _start
+ 
+start:
+    LDR r1, =A           
+    LDR r2, =N 
+    LDR r3, [r2]           
+    MOV r4, #0            
+ 
+process_array:
+    LDR r5, [r1], #4       
+    CMP r5, #30  
+    BLT not_in_range      
+    CMP r5, #55 
+    BGT not_in_range       
+    ADD r4, r4, #1  
+not_in_range:
+    SUBS r3, r3, #1        
+    BNE process_array      
+ 
+    LDR r2, =BR           
+    STR r4, [r2]           
+ 
+    MOV r7, #1             
+    MOV r0, #0             
+    SWI 0x11                
+ 
+.end
+
+------------------------- zadacha bukva A v Ime i Familiq
+
+.486
+.model flat, stdcall
+includelib \masm32\lib\kernel32.lib
+ExitProcess proto:DWORD
+
+.data
+NameSurname db 'teodora stoycheva', 0 
+countA dd 0 
+
+.code
+start:
+    cld 
+    lea esi, NameSurname 
+    mov ecx, 0 
+    mov eax, 0 
+
+count_loop:
+    lodsb 
+    cmp al, 0 
+    je end_count_loop
+    cmp al, 'a' 
+    jne not_a
+    inc ecx 
+not_a:
+    jmp count_loop
+
+end_count_loop:
+    mov [countA], ecx
+    Invoke ExitProcess, 0
+end start
+
+-----------------------------------------
+
+.text
+.global start
+start:
+    ldr r0, =NameSurname 
+    mov r1, #0 
+    mov r2, #0 
+
+count_loop:
+    ldrb r3, [r0], #1 
+    cmp r3, #0
+    beq end_count_loop
+    cmp r3, #'a'
+    bne not_a
+    add r1, r1, #1 
+not_a:
+    b count_loop
+
+end_count_loop:
+    ; Now r1 holds the count of 'a' occurrences
+    swi 0x11
+
+.data
+NameSurname: .Ascii "teodora stoycheva", 0 
+.end
+

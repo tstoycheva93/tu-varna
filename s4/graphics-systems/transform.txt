@@ -1,0 +1,56 @@
+int main(){
+initwindow(800,800);
+float x[]={100,200... kolkoto tochki};
+float y[]={=/=};
+int n=sizeof(x)/sizeof(x[0]);
+
+//Original image draw:
+setcolor(RED);
+for (int i=0;i<n-1;i++){
+line (x[i],y[i],x[i+1],y[i+1]);
+}
+line(x[n-1],y[n-1],x[0].y[0]);
+
+//Presmqtane na koordinati na centur na tejestta, sprqmo koqto shte se mashtabira:
+float sumX=0, sumY=0;
+for (int i=0;i<n;i++) {
+sumX+=x[i];
+sumY+=y[i];
+}
+float xf=sumX/n, yf=sumY/n;
+
+//Mashtabirane
+float sx,sy; //koeficienti
+float xprim, yprim; //novi tochki
+
+setcolor(GREEN);
+for (int i=0;i<n;i++) {
+xprim=xf+(x[i]-xf)*sx;
+yprim=yf+(y[i]-yf)*sy;
+putpixel(xprim, yprim, GREEN);
+x[i]=xprim;
+y[i]=yprim;
+}
+
+//Rotaciq sprqmo chetvurtata tochka na 30 gradusa
+float xc=x[4],yc=y[4];
+float sa=sin(30*M_PI/180), ca=cos(30*M_PI/180);
+
+for (int i=0;i<n;i++) {
+xprim=xc+ca*(x[i]-xc)-sa*(y[i]-yc);
+yprim=yc+sa*(x[i]-xc)+ca*(y[i]-yc);
+x[i]=xprim;
+y[i]=yprim;
+}
+
+//Nova figura
+setcolor(GREEN);
+for (int i=0;i<n-1;i++){
+line (x[i],y[i],x[i+1],y[i+1]);
+}
+line(x[n-1],y[n-1],x[0].y[0]);
+
+getch();
+return 0;
+}
+

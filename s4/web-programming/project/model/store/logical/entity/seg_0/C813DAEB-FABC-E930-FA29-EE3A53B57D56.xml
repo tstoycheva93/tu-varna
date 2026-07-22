@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C813DAEB-FABC-E930-FA29-EE3A53B57D56" name="Purchase">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>55731A9C-E49C-93F4-C4F0-62DD5E16D114</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="60B4D671-0DFB-4757-3D0C-4591DCE29426">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>05399ED5-776E-A6D9-E3AF-144945723E3E</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Client ID Purchase" id="922095D5-A0D3-E81D-6AA6-3F082B63D128">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>6E40886A-113B-B2EA-83EA-5D2C589F9FB0</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<referedAttribute>4C7AD10B-0322-9DE6-3A32-240A3393DF08</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Price" id="5FE1242A-FC28-66C5-2612-F920674990F7">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>F5FF7252-5E60-44B1-5FCA-376777250455</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Date" id="F02A17E2-1401-CAF1-DA6D-1E109E2392B4">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>7A049044-6FB1-260D-610A-88DB0AAF8E01</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Employee ID Purchase" id="296994E5-02E2-13BD-9A62-CEDAB3089B0E">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>408B745B-A65C-9796-1338-AB39DB747CC8</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<referedAttribute>1EF04514-E7DE-A97D-ACFC-B95C3E9E467A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E78D186B-A46B-F3D7-9F58-7127797AA6F8" name="Purchase PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>E76FC28A-AD9D-1D0C-360B-02B2B9C6CF42</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>60B4D671-0DFB-4757-3D0C-4591DCE29426</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

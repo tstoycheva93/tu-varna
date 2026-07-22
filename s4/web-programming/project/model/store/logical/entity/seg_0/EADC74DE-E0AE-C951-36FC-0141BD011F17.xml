@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EADC74DE-E0AE-C951-36FC-0141BD011F17" name="Client">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>E3F6C04E-0104-5EEE-1C7C-E1EFA1705CC3</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="4C7AD10B-0322-9DE6-3A32-240A3393DF08">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>6C967B14-848B-039B-2127-FBC6AF94318D</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="B8F2CDEC-96EF-0DA7-23E9-9BC589E76C06">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>0274EA8C-DDE5-3C01-EDE6-B66FDE53B51E</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone" id="C947E9BC-3F07-5A12-BB68-82586DA44C20">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>E3B4B394-D2E0-6CF0-73A4-A6E8DDF927EF</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="00BD3688-1D13-6EFB-90FA-A87A2B77C48A" name="Client PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>B04E49BC-E361-3A3E-DFFC-C1B73DA19EF1</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C7AD10B-0322-9DE6-3A32-240A3393DF08</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

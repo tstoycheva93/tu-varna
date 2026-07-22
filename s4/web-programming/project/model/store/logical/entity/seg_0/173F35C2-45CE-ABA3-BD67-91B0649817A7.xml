@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="173F35C2-45CE-ABA3-BD67-91B0649817A7" name="Courier">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>7DBC45B8-B734-A790-A287-36D330AF3921</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="67B6CB53-702A-DB31-A6B8-A64792D406EF">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>06CA7895-0B76-4A66-16DD-22AF14BB04F9</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="F2D1417B-000A-3BE2-D18A-0C6ED9C97525">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>D348B3F2-961C-D579-43ED-832DA9DDF7B9</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EIK" id="38488394-9760-E922-907F-F125084BDAA3">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>077E9869-97AE-235C-4683-22BF40D2A539</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B7D52E95-5F5E-0C13-C011-81EAC3867C42" name="Courier PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>835746DE-C038-5018-E1CA-FA444C5B2156</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>67B6CB53-702A-DB31-A6B8-A64792D406EF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

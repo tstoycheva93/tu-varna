@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1651006201 source:d:\uni\gs\hw\9,3\main.cpp
+	<iostream>
+	<graphics.h>
+	<dos.h>
+	<math.h>
+

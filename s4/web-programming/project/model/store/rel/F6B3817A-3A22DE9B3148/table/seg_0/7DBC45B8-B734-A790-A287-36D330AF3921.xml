@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7DBC45B8-B734-A790-A287-36D330AF3921" name="Courier">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:04:44 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="06CA7895-0B76-4A66-16DD-22AF14BB04F9">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:05:28 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="D348B3F2-961C-D579-43ED-832DA9DDF7B9">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:05:28 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EIK" id="077E9869-97AE-235C-4683-22BF40D2A539">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:05:28 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="835746DE-C038-5018-E1CA-FA444C5B2156" name="Courier_PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:05:28 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06CA7895-0B76-4A66-16DD-22AF14BB04F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

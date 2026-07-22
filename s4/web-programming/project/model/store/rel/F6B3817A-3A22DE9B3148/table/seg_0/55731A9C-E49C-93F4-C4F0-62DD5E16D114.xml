@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="55731A9C-E49C-93F4-C4F0-62DD5E16D114" name="Purchase">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:57:55 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="05399ED5-776E-A6D9-E3AF-144945723E3E">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_ID_Purchase" id="CBB1BEDC-3639-0B2D-589C-CF3491575AB8">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3483BC4F-38AF-812D-9775-9CFE92B4C9FA" referredColumn="6C967B14-848B-039B-2127-FBC6AF94318D"/>
+</associations>
+</Column>
+<Column name="Price" id="F5FF7252-5E60-44B1-5FCA-376777250455">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date" id="7A049044-6FB1-260D-610A-88DB0AAF8E01">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_ID_Purchase" id="EA9C576E-8D0E-A16E-D79D-B7C37DB930DB">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4696CC08-A0B0-0DDD-A082-1EC8A3662B8D" referredColumn="57EA9ABE-1DCB-F125-DD92-DDD7E7F12C93"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E76FC28A-AD9D-1D0C-360B-02B2B9C6CF42" name="Purchase_PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05399ED5-776E-A6D9-E3AF-144945723E3E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A204BCD4-CB31-816B-F273-9B1AF76E0AC6" name="Purchase_Client_FK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CBB1BEDC-3639-0B2D-589C-CF3491575AB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="333553CF-2CA1-7246-CA50-E6382E18FF67" name="Purchase_Employee_FK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 20:01:14 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA9C576E-8D0E-A16E-D79D-B7C37DB930DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

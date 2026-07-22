@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="15F55899-3CF3-3845-F9B9-4C5818EBC8A1" name="Items">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:17:18 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Purchase_ID_Items" id="0FD5CBA2-1C78-202A-E4B5-1586813735C4">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:19:29 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7335C2D-721E-2315-357C-95143F686B12" referredColumn="05399ED5-776E-A6D9-E3AF-144945723E3E"/>
+</associations>
+</Column>
+<Column name="Product_ID_Items" id="DB2CA800-1B5A-4767-4EE0-C38AA3399346">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:19:29 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="08A10DDC-73E0-1C6B-2005-5F8B7784CDAC" referredColumn="637F6207-4D37-1E3B-759F-3148A718A302"/>
+</associations>
+</Column>
+<Column name="Quantity" id="80F3DD61-A9F3-E011-B7A9-CB1CD8A5532C">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:19:29 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="859193C7-830B-257C-BCE3-4C72B01D7BB3" name="Items_Purchase_FK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:19:29 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0FD5CBA2-1C78-202A-E4B5-1586813735C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07C0CCB9-6794-ACC0-58F6-46705C6DE73E" name="Items_Product_FK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-11 10:19:29 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB2CA800-1B5A-4767-4EE0-C38AA3399346"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

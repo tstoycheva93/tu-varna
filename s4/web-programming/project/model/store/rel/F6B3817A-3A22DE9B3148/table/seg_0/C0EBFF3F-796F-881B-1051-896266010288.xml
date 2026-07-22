@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C0EBFF3F-796F-881B-1051-896266010288" name="Product">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:47:49 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Product_ID" id="637F6207-4D37-1E3B-759F-3148A718A302">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Product_ID</notNullConstraintName>
+</Column>
+<Column name="Name" id="EE2A5EDD-5412-3941-01FA-4233586721F3">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Group_ID" id="54CF296D-1CD1-0533-DC20-0AC23A8AD6F1">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Product_Group_ID_Product</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="B34084C5-86DC-CC85-56E3-7FCFDBFE8278" referredColumn="D023B170-BA62-5B6C-989A-1CA045B14CF9"/>
+</associations>
+</Column>
+<Column name="Price" id="1FB396AD-DEAA-9C28-DFDF-F53F494F57F4">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Count" id="A6EFFF60-C360-BC79-790A-A23A4CE8C601">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74ED6207-812B-0EC8-D5E8-8D98F578ECF1" name="Product_PK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:50:59 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="637F6207-4D37-1E3B-759F-3148A718A302"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6AD6CC7B-44F9-7293-2FBA-CEF7F2F90AEC" name="Product_Group_FK">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-10 19:55:45 UTC</createdTime>
+<ownerDesignName>store</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54CF296D-1CD1-0533-DC20-0AC23A8AD6F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

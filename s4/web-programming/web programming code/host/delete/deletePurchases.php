@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delete Purchase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+    h2 {
+  color: #333;
+  text-shadow: 2px 2px 2px #ddd;
+  margin-bottom: 10px;
+}
+    .form-group {
+      width: 250px;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"] {
+      width: 250px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #222;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .home-link {
+      display: block;
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 15px 30px;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-link:hover {
+      background-color: #d0d0d0;
+    }
+    .table-container {
+      margin-top: 20px; 
+      width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+    @media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<form action="deletePurchases.php" method="post">
+    <h2>delete purchase</h2>
+    <div class="table-container">
+    <table border="1">
+        <tr>
+            <th>Select</th>
+            <th>Purchase ID</th>
+            <th>Client</th>
+            <th>Employee</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        <?php
+        include '../config.php';
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT purchases.id, clients.name AS clientName, employees.name AS employeeName, purchases.price, purchases.dateOf 
+                FROM purchases 
+                LEFT JOIN clients ON purchases.clientsKey = clients.id 
+                LEFT JOIN employees ON purchases.employeesKey = employees.id";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><input type='radio' name='purchaseId' value='" . $row["id"] . "' required></td>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["clientName"] . "</td>";
+                echo "<td>" . $row["employeeName"] . "</td>";
+                echo "<td>" . $row["price"] . "</td>";
+                echo "<td>" . $row["dateOf"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>No purchases available</td></tr>";
+        }
+
+        $conn->close();
+        ?>
+    </table><br>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="delete" name="deletePurchase"><br>
+    </div>
+    
+    <div class="links-container">
+  <a href='../print/printPurchases.php' class="home-link">view</a>
+  <a href='../index.php' class="home-link">home</a>
+</div>
+</form>
+
+<?php
+if (isset($_POST['deletePurchase'])) {
+    include '../config.php';
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $purchaseId = $_POST['purchaseId'];
+
+    $sql = "DELETE FROM purchases WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $purchaseId);
+
+    if ($stmt->execute()) {
+        echo "Purchase deleted successfully.<br>";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+</body>
+</html>

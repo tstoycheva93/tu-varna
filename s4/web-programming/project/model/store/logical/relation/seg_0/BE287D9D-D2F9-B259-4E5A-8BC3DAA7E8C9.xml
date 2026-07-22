@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Delivery_Group_FK" directorySegmentName="seg_0" id="BE287D9D-D2F9-B259-4E5A-8BC3DAA7E8C9">
+<createdBy>stoyc</createdBy>
+<createdTime>2024-05-12 09:07:51 UTC</createdTime>
+<generatorID>98920F5E-5C5C-4670-639D-FE9113868E87</generatorID>
+<ownerDesignName>store</ownerDesignName>
+<engineerTo>
+<item key="813D88E6-EFED-7045-832C-9843575F99E9" value="true"/>
+<item key="F6B3817A-CDFB-E1D7-30EC-3A22DE9B3148" value="true"/>
+</engineerTo>
+<sourcePk>15D661AB-E199-01B6-6DFF-EBCDC7E77ABC</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8669AB96-6D5C-A4CD-C557-83EC125E3CDD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>320893FB-9A49-78D9-8725-0FDA7B83B5AD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

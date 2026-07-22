@@ -1,0 +1,15 @@
+/*
+ Theme Name:   Eduma Child
+ Theme URI:    http://educationwp.thimpress.com/
+ Description:  Eduma Child Theme
+ Author:       ThimPress
+ Author URI:   http://thimpress.com
+ Template:     eduma
+ Version:      6.0.0
+ Text Domain:  eduma-child
+*/
+
+body.lp.course-item-popup #learn-press-content-item .content-item-wrap .content-item-summary {
+    margin: 10px 20px;
+    max-width: 100vw;
+}

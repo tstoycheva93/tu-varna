@@ -1,0 +1,49 @@
+.486
+.model flat,stdcall
+includelib\masm32\lib\kernel32.lib
+ExitProcess proto:DWORD
+.data
+a dd 5,6,7,12,34,78,22,88,99,100
+sum dd ?
+N dd 10
+.code
+start: 
+lea esi,a ;vzima adres na prv el
+mov eax,0
+mov ecx,N
+
+NEXT:
+mov ebx,[esi]
+add eax,ebx
+add esi,4
+loop NEXT
+mov sum,eax
+ex:
+invoke ExitProcess,0
+end start
+
+-----------------------------------------
+
+
+.text
+.global start
+start:
+ldr R0,=A
+mov R1,#0
+ldr R2,=N
+ldr R2,[R2]
+NEXT: 
+ldr R3,[R0]
+add R1,R1,R3
+add R0,R0,#4
+sub R2,R2,#1
+bne NEXT
+ldr R4,=sum
+str R1,[R4]
+swi 0x11
+.data
+A: .WORD 5,6,7,12,34,78,22,88,99,100
+.align
+sum: .word 0
+N: .word 10
+.end

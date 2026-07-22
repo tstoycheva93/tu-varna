@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1700036499 source:c:\users\student\desktop\21621338\histogrami2\main.cpp
+	<iostream>
+	<graphics.h>
+
