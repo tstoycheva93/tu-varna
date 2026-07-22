@@ -1,0 +1,37 @@
+program {
+    findNumber -> int(int[] arr, int num) {
+        int i = 0;
+        while(i < 10){
+            if(arr[i] == num){
+                return i;
+            }
+            i = i + 1;
+        }
+        return -1;
+    }
+
+    main -> void {
+        int [] arr = int[10];
+        arr[0]=23;
+        arr[1]=21;
+        arr[2]=12;
+        arr[3]=2;
+        arr[4]=22;
+        arr[5]=222;
+        arr[6]=21;
+        arr[7]=212;
+        arr[8]=224;
+        arr[9]=22;
+
+        print("Въведи число за търсене: ");
+        int num = read(num);
+
+        int index = findNumber(arr, num);
+
+        if(index != -1){
+            print("Числото е намерено на индекс ", index);
+        } else {
+            print("Числото не е намерено в масива.");
+        }
+    }
+}
