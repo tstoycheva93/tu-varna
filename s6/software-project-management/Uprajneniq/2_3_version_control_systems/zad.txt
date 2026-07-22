@@ -1,0 +1,15 @@
+Georgi i ivan rabotqt po daden proekt kato izpolzvanta sistema za kontrol na versiite e ot purvo pokolenie:
+1. kakuv model za kontrol na versiite izpolzva
+sled tova georgi reshava da svali fail A i da raboti po nego
+2.kakvo trqbva da napravi predi tova Georgi.
+DOkato Georgi raboti po svoq fail, Ivan reshava da raboti po fail B no mu e neobhodima informaciq ot fail A
+3.Vuzmojno li e Ivan da vidi nujnata informaciq ot fail A i zashto
+4. Ako Ivan e poluchil nujnata mu informaciq i zapochva rabota po failove, moje li promenite na Georgi da dovedat do problemi i knoflicti. Razqsnete otgovora si.
+Georgi i IVan prikluchvat rabota po svoite failove
+5.Vuzmojno li e Ivan da modificira fail A.
+
+1.Lock-modify
+2.Trqbva da si suzdade rabotno kopie koeto sled prikluchvaneto na modificiraneto mu trqbva da se mergene kum centralnoto hranilishte kudeto se suhranqva proekta.
+3.vuzmojno e zashtoto se georgi si raboti po lokalno kopie
+4.vuzmojno e zashtoto ako ne e comitnal promenite 
+5. ako e lock fail A ne moje i e samo read only ako e unlocked da
