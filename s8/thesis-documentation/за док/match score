@@ -1,0 +1,400 @@
+# Match Percentage Feature — Detailed Implementation Plan
+
+## Background
+
+Add a **match score (0–100%)** computed per posting for the authenticated freelancer. Displayed in two places with different UX rules:
+
+- **Posting tile (Explore page):** show badge **only if score > 50%** — keeps noise low, only highlights strong fits
+- **View Posting page:** always show the full score panel when score is non-null — gives precise context before applying
+- **Offer tiles:** **not shown** — the freelancer already applied; the score is no longer decision-relevant
+
+**Confirmed design decisions:**
+- Category: binary (≥1 freelancer skill in the same category as the posting = full credit)
+- Location: 1.0 exact city match → 0.5 same country → 0.0 no match / unset
+
+---
+
+## Is the match score stored in the database?
+
+**No. It is never persisted.**
+
+The score is computed fresh on every request, lives only in the DTO response, and is discarded after the HTTP response is sent. Reasons:
+
+- **Staleness problem:** if the freelancer updates their skills, location, or experience — or if the posting's requirements change — any cached score would instantly become stale. You would need invalidation logic everywhere both entities are modified.
+- **Combinatorial scale:** pre-computing all pairs (N freelancers × M postings) is expensive and mostly wasteful since any given page shows only 6–12 tiles.
+- **Simplicity:** computing on-the-fly via indexed FK lookups is fast enough per page request (a few extra queries against already-indexed tables: `freelancer_skills`, `posting_skills`).
+
+No DB migration is required for this feature.
+
+---
+
+## Algorithm
+
+```
+matchPercentage = round(
+    skillScore    × 0.40 +
+    categoryScore × 0.25 +
+    expScore      × 0.20 +
+    locationScore × 0.15
+) × 100
+```
+
+| Component | Weight | Logic |
+|-----------|--------|-------|
+| Skills | 40% | `(# freelancer skills matching posting skills) / (# posting skills)`. If posting has 0 skills → 1.0 (no mismatch possible). If freelancer has 0 skills and posting has some → 0.0. |
+| Category | 25% | Binary: 1.0 if any active freelancer skill's `category.id` matches the posting's `categoryId`. 0.0 otherwise or if posting categoryId is null. |
+| Experience | 20% | Binary: 1.0 if `Freelancer.experience == Posting.experienceLevel` (same enum constant). 0.0 if either is null or they differ. |
+| Location | 15% | 1.0 = same `Location.id` (city). 0.5 = different city but same `country.id`. 0.0 = no match, or either location is null. |
+
+---
+
+## Backend
+
+---
+
+### 1. `MatchService.java` — **[NEW FILE]**
+
+**Path:** `freelance/src/main/java/com/thesis/freelance/features/posting/service/MatchService.java`
+
+**Package:** `com.thesis.freelance.features.posting.service`
+
+**Annotation:** `@Service`, `@RequiredArgsConstructor`
+
+**Injected dependencies:**
+```
+FreelancerRepository        — findByUserId(UUID) → Optional<Freelancer>
+FreelancerSkillsRepository  — findByFreelancerIdWithSkill(UUID, ActivityStatus) → List<FreelancerSkills>
+PostingSkillsRepository     — findByPostingId(UUID) → List<PostingSkills>
+PostingRepository           — findById(UUID) — used only in the UUID-based overload
+UserRepository              — findById(UUID) → Optional<User>   (to get User.location)
+```
+
+**Why `UserRepository` and not just `Freelancer`?**
+The `Freelancer` entity has no `location` field. Location lives on the `User` entity. The bridge is `Freelancer.userId`.
+
+**Public methods:**
+
+```java
+// Overload 1: given a postingId UUID — fetches Posting internally
+@Transactional(readOnly = true)
+public Integer computeMatch(UUID postingId, UUID freelancerUserId)
+
+// Overload 2: given an already-loaded Posting entity — avoids the extra DB fetch
+// Called from PostingController (page iteration) and from OfferService if needed
+@Transactional(readOnly = true)
+public Integer computeMatchForPosting(Posting posting, UUID freelancerUserId)
+```
+
+Overload 1 simply loads the posting then delegates to Overload 2.
+
+**Lazy-loading safety analysis:**
+- `FreelancerSkills.skill` — `FetchType.LAZY`, but `findByFreelancerIdWithSkill` uses `JOIN FETCH fs.skill` → ✅ safe.
+- `PostingSkills.skill` — `FetchType.LAZY`, and `findByPostingId` does NOT join-fetch. However, since both public methods are `@Transactional(readOnly = true)`, the Hibernate session stays open for the duration of the method, so accessing `ps.getSkill()` lazily mid-stream is safe.
+- `Skill.category` — `FetchType.LAZY`. Same reasoning: session is open → accessing `skill.getCategory().getId()` inside the scoring stream is safe.
+- `User.location` — `FetchType.EAGER` on `User` → ✅ always available.
+- `Location.country` — `FetchType.EAGER` on `Location` → ✅ always available.
+- `Posting.location` — `FetchType.EAGER` on `Posting` → ✅ always available.
+
+**Private scorer signatures:**
+```java
+private double computeSkillScore(List<FreelancerSkills> fSkills, List<PostingSkills> pSkills)
+private double computeCategoryScore(List<FreelancerSkills> fSkills, UUID postingCategoryId)
+private double computeExperienceScore(Freelancer freelancer, Posting posting)
+private double computeLocationScore(User freelancerUser, Posting posting)
+```
+
+**Scorer logic:**
+
+`computeSkillScore`:
+1. If `pSkills.isEmpty()` → return `1.0`
+2. Build `Set<UUID> fSkillIds` = `fSkills.stream().map(fs -> fs.getSkill().getId()).collect(toSet())`
+3. `long matches` = `pSkills.stream().filter(ps -> fSkillIds.contains(ps.getSkill().getId())).count()`
+4. Return `(double) matches / pSkills.size()`
+
+`computeCategoryScore`:
+1. If `postingCategoryId == null` → return `0.0`
+2. `fSkills.stream().map(FreelancerSkills::getSkill).map(Skill::getCategory).filter(c -> c != null).anyMatch(c -> postingCategoryId.equals(c.getId()))` → `1.0` or `0.0`
+
+`computeExperienceScore`:
+1. If `freelancer.getExperience() == null || posting.getExperienceLevel() == null` → `0.0`
+2. Return `freelancer.getExperience() == posting.getExperienceLevel() ? 1.0 : 0.0`
+
+`computeLocationScore`:
+1. If `freelancerUser == null` → `0.0`
+2. `userLoc = freelancerUser.getLocation()`, `postLoc = posting.getLocation()`
+3. If either is null → `0.0`
+4. If `userLoc.getId().equals(postLoc.getId())` → `1.0`
+5. Else if both have non-null `.getCountry()` and `userLoc.getCountry().getId().equals(postLoc.getCountry().getId())` → `0.5`
+6. Otherwise → `0.0`
+
+**Final assembly (in both public methods):**
+```java
+double total = skillScore*0.40 + categoryScore*0.25 + expScore*0.20 + locationScore*0.15;
+return (int) Math.round(total * 100);
+```
+
+---
+
+### 2. `PostingTileDto.java` — **[MODIFY]**
+
+**Path:** `freelance/.../features/posting/dto/PostingTileDto.java`
+
+Add one field at the bottom of the class (before closing `}`):
+```java
+private Integer matchPercentage;
+```
+
+`null` = not computed (client viewer or unauthenticated). Lombok `@Data` + `@Builder` handle the getter/setter/builder automatically.
+
+---
+
+### 3. `PostingController.java` — **[MODIFY]**
+
+**Path:** `freelance/.../features/posting/web/PostingController.java`
+
+**Two changes:**
+
+#### Change A — inject `MatchService`
+Add to the controller's constructor-injected fields:
+```java
+private final MatchService matchService;
+```
+(`UserRepository` is already present in the controller.)
+
+#### Change B — compute scores on `GET /postings`
+Add `@AuthenticationPrincipal UserDetails userDetails` as a parameter to `getAllPostings()`.
+After `Page<PostingTileDto> postings = postingService.getPostings(...)`:
+
+```java
+if (userDetails != null) {
+    User currentUser = userRepository.findByUsername(userDetails.getUsername()).orElse(null);
+    if (currentUser != null && currentUser.isFreelancer()) {
+        postings.forEach(tile ->
+            tile.setMatchPercentage(
+                matchService.computeMatch(tile.getId(), currentUser.getId())
+            )
+        );
+    }
+}
+```
+
+- Unauthenticated callers → `userDetails` is null → skip → all `matchPercentage` stay null.
+- Authenticated clients → `!isFreelancer()` → skip.
+- `tile.getId()` is `UUID` from `PostingTileDto.id`. `currentUser.getId()` is the `User.id` UUID from `BaseEntity`.
+
+#### Change C — new endpoint `GET /postings/{id}/match`
+```java
+@GetMapping("/{id}/match")
+public ResponseEntity<Map<String, Integer>> getMatchScore(
+        @PathVariable UUID id,
+        @AuthenticationPrincipal UserDetails userDetails) {
+    if (userDetails == null) return ResponseEntity.ok(Map.of());
+    User user = userRepository.findByUsername(userDetails.getUsername()).orElse(null);
+    if (user == null || !user.isFreelancer()) return ResponseEntity.ok(Map.of());
+    Integer score = matchService.computeMatch(id, user.getId());
+    if (score == null) return ResponseEntity.ok(Map.of());
+    return ResponseEntity.ok(Map.of("matchPercentage", score));
+}
+```
+
+Returns an empty map `{}` (not 404) for non-freelancers — easier for the frontend to handle gracefully.
+
+
+---
+
+### 7. `PostingSkillsRepository.java` — **[NO CHANGE NEEDED]**
+
+`findByPostingId(UUID)` is sufficient because `MatchService` methods are `@Transactional(readOnly = true)`, keeping the session open for lazy loading.
+
+---
+
+## Frontend
+
+---
+
+### 8. `postingTypes.ts` — **[MODIFY]**
+
+**Path:** `freelance-ui/src/features/posting/types/postingTypes.ts`
+
+**In `PostingTileDto` interface** (lines 91–106), add:
+```ts
+matchPercentage?: number;
+```
+
+**In `PostingProfile` interface** (lines 141–157), add:
+```ts
+matchPercentage?: number;
+```
+
+---
+
+### 10. `postingService.ts` — **[MODIFY]**
+
+**Path:** `freelance-ui/src/features/posting/services/postingService.ts`
+
+**In `mapTileToProfile` function** (lines 26–44), add to the returned object:
+```ts
+matchPercentage: dto.matchPercentage,
+```
+
+**Add a new service method** inside the `postingService` object:
+```ts
+getMatchScore: (postingId: string): Promise<{ matchPercentage?: number }> =>
+    api.get(`/postings/${postingId}/match`),
+```
+
+---
+
+### 11. `MatchBadge.tsx` — **[NEW FILE]**
+
+**Path:** `freelance-ui/src/common/components/MatchBadge.tsx`
+
+**Props:**
+```ts
+interface MatchBadgeProps {
+  percentage: number;       // 0–100
+  size?: 'sm' | 'md';      // default 'md'
+  className?: string;
+}
+```
+
+**Color tiers:**
+
+| Range | Fill color |
+|-------|-----------|
+| 51–69% | Amber: `bg-amber-500/90` |
+| 70–89% | Emerald: `bg-emerald-500/90` |
+| 90–100% | Violet: `bg-violet-600/90` |
+
+> [!NOTE]
+> The badge is only rendered when `percentage > 50` (enforced by the parent), so the slate/neutral tier (0–50%) is never displayed. The color table starts from 51%.
+
+**Visual anatomy:**
+```
+[ 🎯 87% match ]
+```
+- Pill shape: `rounded-full px-3 py-1`
+- Left icon: `my_location` Material Symbol (small, `text-[14px]`)
+- Text: `{percentage}% match` — bold, small (`text-[11px] font-bold uppercase tracking-wide`)
+- Backdrop blur: `backdrop-blur-md`
+- Border: `border border-white/30`
+- Shadow: `shadow-md`
+- Framer-motion entrance: `initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.2 }}`
+
+---
+
+### 12. `PostingComponent.tsx` — **[MODIFY]**
+
+**Path:** `freelance-ui/src/features/posting/components/PostingComponent.tsx`
+
+No prop interface changes needed — `PostingProfile` will have `matchPercentage?: number`.
+
+Add inside the image `<div>` (the `h-56` container), **bottom-right corner**, **only when score > 50**:
+
+```tsx
+{posting.matchPercentage != null && posting.matchPercentage > 50 && (
+    <div className="absolute bottom-3 right-3 z-10">
+        <MatchBadge percentage={posting.matchPercentage} size="sm" />
+    </div>
+)}
+```
+
+> [!NOTE]
+> The threshold `> 50` is a UI-only filter. The server always computes and returns the score for all freelancers; the frontend simply doesn't render the badge for weak matches, keeping the Explore grid clean.
+
+Add import:
+```ts
+import MatchBadge from '../../../common/components/MatchBadge';
+```
+
+---
+
+### 13. `ViewPostingPage.tsx` — **[MODIFY]**
+
+**Path:** `freelance-ui/src/features/posting/pages/ViewPostingPage.tsx`
+
+The existing `GET /postings/{id}` returns `PostingDetailDto`, which does not carry `matchPercentage`. A separate call to `GET /postings/{id}/match` fetches the score.
+
+**State addition:**
+```ts
+const [matchScore, setMatchScore] = useState<number | null>(null);
+```
+
+**In the existing `useEffect`** that fetches the posting, add a parallel call:
+```ts
+const [postingData, matchData] = await Promise.all([
+    postingService.getById(id),
+    postingService.getMatchScore(id),   // returns {} or { matchPercentage: N }
+]);
+setMatchScore(matchData.matchPercentage ?? null);
+```
+
+**Rendering — match score panel:**
+
+Render at the **top of `PostingSidebar`** (above budget/deadline), always when `matchScore !== null`:
+
+```
+┌─────────────────────────────────────────┐
+│  🎯  Your Match Score          87%      │  ← large number, color-coded
+│  ████████████████████░░░░░░             │  ← progress bar
+└─────────────────────────────────────────┘
+```
+
+Design spec:
+- Glass card: `bg-white/40 backdrop-blur-md border border-white/40 rounded-2xl p-4`
+- Header row: `🎯 Your Match Score` label left, large `87%` number right (color matches tier)
+- Progress bar: full-width `h-2 rounded-full bg-slate-200`, inner fill `rounded-full` colored by tier, width = `${matchScore}%`, `transition-all duration-700` animation
+- No breakdown of individual components (total score only)
+- Color tiers identical to `MatchBadge`
+
+> [!NOTE]
+> The tile badge only renders for scores > 50%, but the `ViewPostingPage` panel renders **always** when non-null — even a 12% match is useful information when the freelancer is reviewing full posting details.
+
+Add import:
+```ts
+import MatchBadge from '../../../common/components/MatchBadge';
+// (or a dedicated MatchScorePanel component if preferred)
+```
+
+---
+
+## Data Flow Summary
+
+```
+GET /postings  (freelancer authenticated)
+  → PostingController: computes matchPercentage per tile via MatchService
+  → PostingTileDto.matchPercentage set for all tiles
+  → JSON response includes matchPercentage for all
+
+Frontend ExplorePage → PostingComponent:
+  → renders <MatchBadge> ONLY when matchPercentage > 50
+  → score still present in JSON even when ≤ 50 (just not rendered)
+
+──────────────────────────────────────────────
+
+GET /postings/{id}/match  (freelancer authenticated)
+  → PostingController → MatchService.computeMatch(id, userId)
+  → returns { matchPercentage: N }
+
+Frontend ViewPostingPage:
+  → fetches in parallel with posting detail
+  → renders full score panel in PostingSidebar — always, regardless of value
+
+──────────────────────────────────────────────
+
+
+
+---
+
+## Files Changed Summary
+
+| File | Change | Purpose |
+|------|--------|---------|
+| `MatchService.java` | **NEW** | Scoring engine |
+| `PostingTileDto.java` | MODIFY | Add `matchPercentage: Integer` field |
+| `PostingController.java` | MODIFY | Inject MatchService; set score in `GET /postings`; add `GET /postings/{id}/match` |
+| `postingTypes.ts` | MODIFY | Add `matchPercentage?` to `PostingTileDto` + `PostingProfile` |
+| `postingService.ts` | MODIFY | Pass field through `mapTileToProfile`; add `getMatchScore()` call |
+| `MatchBadge.tsx` | **NEW** | Reusable pill badge (used on tiles) |
+| `PostingComponent.tsx` | MODIFY | Render `<MatchBadge>` when `matchPercentage > 50` |
+| `ViewPostingPage.tsx` | MODIFY | Fetch + display full score panel in sidebar |
