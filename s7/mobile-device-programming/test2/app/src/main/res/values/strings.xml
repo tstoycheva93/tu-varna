@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Test2</string>
+    <string name="title">Оценяване на %1$s</string>
+    <string name="nameLabel">Име</string>
+    <string name="namePlace">Въведи име на студент:</string>
+    <string name="facLabel">Факултетен номер</string>
+    <string name="facPlace">Въведете факултетен номер</string>
+    <string name="specLabel">Дисциплина</string>
+    <string name="specPlace">Въведете дисциплина</string>
+    <string name="marksLabel">Точки</string>
+    <string name="marksPlace">Въведете точки</string>
+    <string name="btn">Покажи</string>
+    <string name="invalid_name">Invalid Name</string>
+    <string name="invalid_name2">Invalid Name</string>
+    <string name="invalid_num">Invalid Num</string>
+    <string name="invalid_spec">Invalid Spec</string>
+    <string name="invalid_marks">Invalid Marks</string>
+    <string name="error">Невалидно въведени данни</string>
+    <string name="success">Успешно оценяване</string>
+</resources>

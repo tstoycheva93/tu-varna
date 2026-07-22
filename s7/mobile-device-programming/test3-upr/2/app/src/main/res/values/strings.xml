@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Test3_Prac2</string>
+    <string name="automotive">Автомобили</string>
+    <string name="biology">Биология</string>
+    <string name="crafts">Занаяти</string>
+    <string name="business">Бизнес</string>
+    <string name="culinary">Кулинария</string>
+    <string name="design">Дизайн</string>
+    <string name="ecology">Екология</string>
+    <string name="engineering">Инженерство</string>
+    <string name="fashion">Мода</string>
+    <string name="finance">Финанси</string>
+    <string name="film">Филми</string>
+    <string name="gaming">Игри</string>
+    <string name="geology">Геология</string>
+    <string name="drawing">Рисуване</string>
+    <string name="history">История</string>
+    <string name="journalism">Журналистика</string>
+    <string name="law">Право</string>
+    <string name="lifestyle">Начин на живот</string>
+    <string name="music">Музика</string>
+    <string name="painting">Живопис</string>
+    <string name="photography">Фотография</string>
+    <string name="physics">Физика</string>
+    <string name="tech">Технологии</string>
+</resources>
