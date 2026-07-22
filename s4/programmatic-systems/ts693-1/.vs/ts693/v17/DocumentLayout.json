@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stoyc\\source\\repos\\ts693\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|solutionrelative:ts693\\ts693.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       $ \u008D )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|solutionrelative:ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       $ \u008D )$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       $ \u00A2 )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|solutionrelative:ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       $ \u00A2 )$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       ) \u008D )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|solutionrelative:ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       ) \u008D )$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{2ABD5B6C-56A8-409E-86EE-505980F0BBE6}|ts693\\ts693.vcxproj|solutionrelative:ts693\\ts693.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     "
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ts693.rc - IDC_TS693 [English (United States)] - Accelerator",
+              "DocumentMoniker": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc",
+              "RelativeDocumentMoniker": "ts693\\ts693.rc",
+              "ToolTip": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc - IDC_TS693 [English (United States)] - Accelerator",
+              "RelativeToolTip": "ts693\\ts693.rc - IDC_TS693 [English (United States)] - Accelerator",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-10T06:58:38.94Z",
+              "EditorCaption": " - IDC_TS693 [English (United States)] - Accelerator"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ts693.rc - IDR_MENU1 [English (United States)] - Menu",
+              "DocumentMoniker": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc",
+              "RelativeDocumentMoniker": "ts693\\ts693.rc",
+              "ToolTip": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc - IDR_MENU1 [English (United States)] - Menu",
+              "RelativeToolTip": "ts693\\ts693.rc - IDR_MENU1 [English (United States)] - Menu",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-10T06:27:26.595Z",
+              "EditorCaption": " - IDR_MENU1 [English (United States)] - Menu"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ts693.rc - IDC_TS693 [English (United States)] - Menu",
+              "DocumentMoniker": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc",
+              "RelativeDocumentMoniker": "ts693\\ts693.rc",
+              "ToolTip": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc - IDC_TS693 [English (United States)] - Menu",
+              "RelativeToolTip": "ts693\\ts693.rc - IDC_TS693 [English (United States)] - Menu",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-10T06:17:24.232Z",
+              "EditorCaption": " - IDC_TS693 [English (United States)] - Menu"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ts693.rc - IDD_DIALOG1 [English (United States)] - Dialog",
+              "DocumentMoniker": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc",
+              "RelativeDocumentMoniker": "ts693\\ts693.rc",
+              "ToolTip": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.rc - IDD_DIALOG1 [English (United States)] - Dialog",
+              "RelativeToolTip": "ts693\\ts693.rc - IDD_DIALOG1 [English (United States)] - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-10T06:19:05.747Z",
+              "EditorCaption": " - IDD_DIALOG1 [English (United States)] - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ts693.cpp",
+              "DocumentMoniker": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.cpp",
+              "RelativeDocumentMoniker": "ts693\\ts693.cpp",
+              "ToolTip": "C:\\Users\\stoyc\\source\\repos\\ts693\\ts693\\ts693.cpp",
+              "RelativeToolTip": "ts693\\ts693.cpp",
+              "ViewState": "AQIAACABAAAAAAAAAAAAADcBAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-09T21:30:50.964Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

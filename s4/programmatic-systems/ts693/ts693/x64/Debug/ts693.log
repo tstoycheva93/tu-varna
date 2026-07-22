@@ -1,0 +1,12 @@
+﻿  ts693.cpp
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(240,37): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(241,37): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(242,37): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(265,49): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(276,41): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(229,18): warning C4101: 't11': unreferenced local variable
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(229,27): warning C4101: 't2': unreferenced local variable
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(231,9): warning C4101: 'lbIndex': unreferenced local variable
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(232,26): warning C4101: 'c_index': unreferenced local variable
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(232,18): warning C4101: 'listEl': unreferenced local variable
+  ts693.vcxproj -> C:\Users\stoyc\source\repos\ts693\x64\Debug\ts693.exe

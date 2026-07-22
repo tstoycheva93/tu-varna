@@ -1,0 +1,4 @@
+﻿  ts693.cpp
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(237,34): warning C4101: 't22': unreferenced local variable
+C:\Users\stoyc\source\repos\ts693\ts693\ts693.cpp(237,43): warning C4101: 't3': unreferenced local variable
+  ts693.vcxproj -> C:\Users\stoyc\source\repos\ts693\x64\Debug\ts693.exe
